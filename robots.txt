@@ -1,0 +1,13 @@
+#
+# robots.txt for PHPMyWind
+#
+
+User-agent: *
+Disallow: /admin/
+Disallow: /data/
+Disallow: /include/
+Disallow: /install/
+Disallow: /templates/
+Disallow: /uploads/
+Disallow: /message.php?action=add*
+Disallow: /member.php
