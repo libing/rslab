@@ -17,7 +17,7 @@ $db_user = 'root';
 $db_pwd = '';
 
 //数据库名
-$db_name = 'phpmywind_db';
+$db_name = 'rslab';
 
 //数据表前缀
 $db_tablepre = 'li_';
