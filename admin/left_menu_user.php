@@ -114,7 +114,6 @@
 </div>
 <div class="bGradient"></div>
 <div class="copyright">
-	© 2012 <a href="http://phpMyWind.com/" target="_blank">phpMyWind.com</a><br />All Rights Reserved.
 </div>
 </body>
 </html>

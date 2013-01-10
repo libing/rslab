@@ -75,7 +75,6 @@
 </div>
 <div class="bGradient"></div>
 <div class="hr_5"></div>
-<div class="copyright"> © 2012 <a href="http://phpMyWind.com/" target="_blank">phpMyWind.com</a><br />
-	All Rights Reserved. </div>
+<div class="copyright"></div>
 </body>
 </html>

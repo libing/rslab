@@ -217,12 +217,9 @@ $(function(){
 </script>
 </head>
 <body class="login_body">
-<div class="login_logo"><a href="http://phpmywind.com" target="_blank"></a></div>
-<div class="login_text"><span class="login_note">
-	<?php if(strstr(GetCurUrl(), '/admin/login')) echo '提示：您的后台路径为/<i>admin</i>/，建议更改为更加安全的路径！'; ?>
-	</span>
-	<?php if($cfg_author != '') echo '<i>Author : '.$cfg_author.'</i><span class="line">|</span>'; ?>
-	访问 <i><a href="http://phpmywind.com/" target="_blank" class="login_note_link">phpMyWind.com</a></i><span class="line">|</span><a href="http://phpmywind.com/bbs/" target="_blank">帮助</a></div>
+<div class="login_logo"></div>
+<div class="login_text"><span class="login_note"></span>
+</div>
 <div class="login_warp">
 	<div class="login_area">
 		<form name="login" method="post" action="" onSubmit="return CheckForm()">

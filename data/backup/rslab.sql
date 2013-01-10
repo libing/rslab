@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 01 月 08 日 16:48
+-- 生成日期: 2013 年 01 月 10 日 17:18
 -- 服务器版本: 5.5.25a
 -- PHP 版本: 5.4.4
 
@@ -66,14 +66,15 @@ CREATE TABLE IF NOT EXISTS `li_admin` (
   `levelname` tinyint(1) unsigned NOT NULL COMMENT '级别',
   `checkadmin` enum('true','false') NOT NULL COMMENT '审核',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- 转存表中的数据 `li_admin`
 --
 
 INSERT INTO `li_admin` (`id`, `username`, `password`, `loginip`, `logintime`, `levelname`, `checkadmin`) VALUES
-(1, 'admin', 'c3284d0f94606de1fd2af172aba15bf3', '0.0.0.0', 1357659626, 0, 'true');
+(1, 'admin', 'c3284d0f94606de1fd2af172aba15bf3', '0.0.0.0', 1357834621, 0, 'true'),
+(2, 'xiaobingstart', '24f02ef828f7657f3a125df3b0e250b0', '0.0.0.0', 1357828840, 2, 'true');
 
 -- --------------------------------------------------------
 
@@ -3441,14 +3442,15 @@ CREATE TABLE IF NOT EXISTS `li_diyfield` (
   `orderid` smallint(6) NOT NULL COMMENT '排列排序',
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- 转存表中的数据 `li_diyfield`
 --
 
 INSERT INTO `li_diyfield` (`id`, `infotype`, `fieldname`, `fieldtitle`, `fielddesc`, `fieldtype`, `fieldlong`, `fieldsel`, `fieldcheck`, `fieldcback`, `orderid`, `checkinfo`) VALUES
-(2, 2, 'zhaiyao2', '摘要2', '', 'text', '', '', '', '', 1, 'true');
+(2, 2, 'abstract_cn', '中文摘要', '中文简介 或者 视频地址', 'text', '', '', '', '', 1, 'true'),
+(3, 2, 'abstract_en', '英文摘要', '英文简介', 'text', '', '', '', '', 2, 'true');
 
 -- --------------------------------------------------------
 
@@ -3472,10 +3474,10 @@ CREATE TABLE IF NOT EXISTS `li_diymenu` (
 --
 
 INSERT INTO `li_diymenu` (`id`, `siteid`, `parentid`, `classname`, `linkurl`, `orderid`, `checkinfo`) VALUES
-(1, 1, 0, '留言模块管理', '', 0, 'false'),
+(1, 1, 0, '留言模块管理', '', 0, 'true'),
 (2, 1, 1, '留言管理', 'message.php', 1, 'true'),
 (3, 1, 1, '添加留言', 'message_add.php', 2, 'true'),
-(4, 1, 0, '友情链接管理', '', 3, 'false'),
+(4, 1, 0, '友情链接管理', '', 3, 'true'),
 (5, 1, 4, '友情链接管理', 'weblink.php', 4, 'true'),
 (6, 1, 4, '友情链接添加', 'weblink_add.php', 5, 'true'),
 (7, 1, 0, '广告模块管理', '', 6, 'false'),
@@ -3729,26 +3731,33 @@ CREATE TABLE IF NOT EXISTS `li_infoclass` (
   `adminmenu` set('true') NOT NULL COMMENT '管理菜单',
   `menulevel` tinyint(2) unsigned NOT NULL COMMENT '管理栏目层级',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
 
 --
 -- 转存表中的数据 `li_infoclass`
 --
 
 INSERT INTO `li_infoclass` (`id`, `siteid`, `parentid`, `parentstr`, `infotype`, `classname`, `linkurl`, `picurl`, `seotitle`, `keywords`, `description`, `orderid`, `checkinfo`, `adminmenu`, `menulevel`) VALUES
-(1, 1, 0, '0,', 0, '网站公告', '', '', '', '', '', 1, 'true', 'true', 0),
-(2, 1, 0, '0,', 0, '关于我们', '', '', '', '', '', 2, 'true', 'true', 0),
-(3, 1, 2, '0,2,', 0, '关于我们摘要', '', '', '', '', '', 3, 'true', '', 0),
-(4, 1, 0, '0,', 1, '新闻动态', '', '', '', '', '', 4, 'true', 'true', 0),
-(5, 1, 0, '0,', 2, '产品展示', '', '', '', '', '', 5, 'true', 'true', 2),
-(6, 1, 5, '0,5,', 2, '笔记本电脑', '', '', '', '', '', 6, 'true', '', 0),
-(7, 1, 5, '0,5,', 2, '智能手机', '', '', '', '', '', 7, 'true', '', 0),
-(8, 1, 0, '0,', 2, '成功案例', '', '', '', '', '', 8, 'true', 'true', 0),
-(9, 1, 0, '0,', 0, '联系我们', '', '', '', '', '', 11, 'true', 'true', 0),
-(10, 1, 9, '0,9,', 0, '联系我们摘要', '', '', '', '', '', 10, 'true', '', 0),
-(11, 1, 0, '0,', 3, '软件下载', '', '', '', '', '', 12, 'true', 'true', 0),
-(12, 1, 0, '0,', 2, '幻灯Banner', '', '', '', '', '', 13, 'true', 'true', 0),
-(13, 1, 0, '0,', 0, '测试信息', '', '', '', '', '', 9, 'true', 'true', 0);
+(1, 1, 0, '0,', 0, '网站公告', '', '', '', '', '', 5, 'true', 'true', 0),
+(2, 1, 0, '0,', 0, '关于我们', '', '', '', '', '', 8, 'false', 'true', 0),
+(3, 1, 2, '0,2,', 0, '关于我们摘要', '', '', '', '', '', 3, 'false', '', 0),
+(4, 1, 0, '0,', 1, '新闻动态', '', '', '', '', '', 9, 'false', 'true', 0),
+(5, 1, 0, '0,', 2, '产品展示', '', '', '', '', '', 1, 'false', 'true', 2),
+(6, 1, 5, '0,5,', 2, '笔记本电脑', '', '', '', '', '', 6, 'false', '', 0),
+(7, 1, 5, '0,5,', 2, '智能手机', '', '', '', '', '', 7, 'false', '', 0),
+(8, 1, 0, '0,', 2, '成功案例', '', '', '', '', '', 11, 'false', 'true', 0),
+(9, 1, 0, '0,', 0, '联系我们', '', '', '', '', '', 13, 'false', 'true', 0),
+(10, 1, 9, '0,9,', 0, '联系我们摘要', '', '', '', '', '', 10, 'false', '', 0),
+(11, 1, 0, '0,', 3, '软件下载', '', '', '', '', '', 21, 'false', 'true', 0),
+(12, 1, 0, '0,', 2, '首页幻灯Banner', '', '', '', '', '', 2, 'true', 'true', 0),
+(13, 1, 0, '0,', 0, '测试信息', '', '', '', '', '', 12, 'false', 'true', 0),
+(14, 1, 5, '0,5,', 2, '历史', '', 'uploads/image/20130110/1357842316.jpg', '', '', '', 15, 'true', 'true', 0),
+(15, 1, 5, '0,5,', 2, '足底测试', '', '', '', '', '', 16, 'true', '', 0),
+(16, 1, 5, '0,5,', 2, '装备指导', '', '', '', '', '', 17, 'true', '', 0),
+(17, 1, 5, '0,5,', 2, '足部保护', '', '', '', '', '', 18, 'true', '', 0),
+(18, 1, 5, '0,5,', 2, '训练', '', '', '', '', '', 19, 'true', '', 0),
+(19, 1, 5, '0,5,', 2, '体验中心', '', '', '', '', '', 20, 'true', '', 0),
+(20, 1, 0, '0,', 2, '首页滚动图片', '', '', '', '', '', 4, 'true', 'true', 0);
 
 -- --------------------------------------------------------
 
@@ -3810,31 +3819,34 @@ CREATE TABLE IF NOT EXISTS `li_infoimg` (
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   `delstate` set('true') NOT NULL COMMENT '删除状态',
   `deltime` int(10) unsigned NOT NULL COMMENT '删除时间',
-  `zhaiyao2` text NOT NULL,
+  `abstract_cn` text NOT NULL,
+  `abstract_en` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- 转存表中的数据 `li_infoimg`
 --
 
-INSERT INTO `li_infoimg` (`id`, `siteid`, `classid`, `parentid`, `parentstr`, `mainid`, `mainpid`, `mainpstr`, `title`, `colorval`, `boldval`, `flag`, `size`, `price`, `author`, `linkurl`, `keywords`, `description`, `content`, `picurl`, `picarr`, `hits`, `orderid`, `posttime`, `checkinfo`, `delstate`, `deltime`, `zhaiyao2`) VALUES
-(1, 1, 7, 5, '0,5,', -1, -1, '', '苹果iPhone 4S 白色版', '', '', '', '白色版', '5699', 'admin', '', '', '', '', 'templates/default/images/imgdata/iphone4s_w.jpg', '', 57, 1, 1326770071, 'true', '', 0, ''),
-(2, 1, 7, 5, '0,5,', -1, -1, '', '苹果iphone 4s', '', '', '', '黑色版', '7000', 'admin', '', '', '', '', 'templates/default/images/imgdata/iphone4s.jpg', '', 118, 2, 1326770089, 'true', '', 0, ''),
-(3, 1, 6, 5, '0,5,', -1, -1, '', '苹果iPad 2 16GB/WIFI版', '', '', '', '16GB/WIFI版', '4000', 'admin', '', '', '', '', 'templates/default/images/imgdata/ipad2.jpg', '', 85, 3, 1326770110, 'true', '', 0, ''),
-(4, 1, 6, 5, '0,5,', -1, -1, '', '苹果iPod touch 4', '', '', '', '白色', '1459', 'admin', '', '', '', '', 'templates/default/images/imgdata/iPod.jpg', '', 159, 4, 1326770133, 'true', '', 0, ''),
-(5, 1, 6, 5, '0,5,', -1, -1, '', '苹果MacBook Pro', '', '', '', 'MC725CH/A', '18400', 'admin', '', '', '', '', 'templates/default/images/imgdata/macbook.jpg', '', 87, 5, 1326770162, 'true', '', 0, ''),
-(6, 1, 6, 5, '0,5,', -1, -1, '', '苹果iMac', '', '', '', 'MC814CH/A', '14900', 'admin', '', '', '', '', 'templates/default/images/imgdata/iMac.jpg', '', 165, 6, 1326770178, 'true', '', 0, ''),
-(7, 1, 8, 0, '0,', -1, -1, '', '361度——腾讯大运会梦想传递', '', '', '', '', '', 'admin', '', '', '火炬传递将是拉开2011年深圳世界大运会全民眼帘的幕布，政府首次以官方身份举办的网络虚拟火炬传递活动。将火炬虚拟传递举办成为深圳世界大运会的一次互联网传播盛会，361度借此机遇搭载腾讯大平台，迅速使其品牌在深圳世界大运会全面曝光，从而达到361度传播品牌，提升品牌形象的目的。', '', 'templates/default/images/imgdata/361du.jpg', '', 107, 7, 1326770200, 'true', '', 0, ''),
-(8, 1, 8, 0, '0,', -1, -1, '', '中华牙膏——我的微笑闪亮未来', '', '', '', '', '', 'admin', '', '', '这次活动将微博与微电影进行多种结合，充分调动用户与向微电影互动，通过看电影收集微笑金币，微博好友“出演”微电影，写下“我的未来”等，将中华牙膏“我的微笑 闪亮未来”的精神精准传递给受众。', '', 'templates/default/images/imgdata/zhonghua.jpg', '', 195, 8, 1326770219, 'true', '', 0, ''),
-(9, 1, 8, 0, '0,', -1, -1, '', '中国电信天翼——三星I559 I mini I life', '', '', '', '', '', 'admin', '', '', '作为电信天翼的定制手机，三星Galaxy 系列手机 Galaxy Mini上市之际，电信天翼希望借助腾讯的媒体平台和互动形式，直击年轻消费群体，实现产品对目标受众的充分曝光和产品卖点的有效深化 。', '', 'templates/default/images/imgdata/I559.jpg', '', 143, 9, 1326770246, 'true', '', 0, ''),
-(10, 1, 8, 0, '0,', -1, -1, '', 'Moto——MT620两面派变身秀', '', '', '', '', '', 'admin', '', '', 'Tahiti是MOTO推出的第一款将“触摸屏幕”和“QWERTY Bar”相结合的智能手机 ，为快速引发青年白领关注，MOTO借腾讯大平台，打造了一场“两面派变身秀”。', '', 'templates/default/images/imgdata/moto.jpg', '', 118, 10, 1326770273, 'true', '', 0, ''),
-(11, 1, 12, 0, '0,', -1, -1, '', '三一重工86米世界最长臂架泵车下线', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_1.jpg', '', 64, 11, 1326770289, 'true', '', 0, ''),
-(12, 1, 12, 0, '0,', -1, -1, '', '三一产品获八项第一', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_2.jpg', '', 131, 12, 1326770306, 'true', '', 0, ''),
-(13, 1, 12, 0, '0,', -1, -1, '', '三一获评《财富》十大“最受赞赏中国公司”', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_3.jpg', '', 80, 13, 1326770336, 'true', '', 0, ''),
-(14, 1, 12, 0, '0,', -1, -1, '', '自主创新，志在一流，2012年三一科技节', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_4.jpg', '', 86, 14, 1326770366, 'true', '', 0, ''),
-(15, 1, 12, 0, '0,', -1, -1, '', '唐家璇：三一重工为国家争了光', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_5.jpg', '', 87, 15, 1326770383, 'true', '', 0, ''),
-(16, 1, 12, 0, '0,', -1, -1, '', '亚洲首台千吨级全地面起重机SAC12000 2.0兆风电吊装圆满成功', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_6.jpg', '', 53, 16, 1326770404, 'true', '', 0, '');
+INSERT INTO `li_infoimg` (`id`, `siteid`, `classid`, `parentid`, `parentstr`, `mainid`, `mainpid`, `mainpstr`, `title`, `colorval`, `boldval`, `flag`, `size`, `price`, `author`, `linkurl`, `keywords`, `description`, `content`, `picurl`, `picarr`, `hits`, `orderid`, `posttime`, `checkinfo`, `delstate`, `deltime`, `abstract_cn`, `abstract_en`) VALUES
+(1, 1, 7, 5, '0,5,', -1, -1, '', '苹果iPhone 4S 白色版', '', '', '', '白色版', '5699', 'admin', '', '', '', '', 'templates/default/images/imgdata/iphone4s_w.jpg', '', 57, 1, 1326770071, 'true', '', 0, '', ''),
+(2, 1, 7, 5, '0,5,', -1, -1, '', '苹果iphone 4s', '', '', '', '黑色版', '7000', 'admin', '', '', '', '', 'templates/default/images/imgdata/iphone4s.jpg', '', 118, 2, 1326770089, 'true', '', 0, '', ''),
+(3, 1, 6, 5, '0,5,', -1, -1, '', '苹果iPad 2 16GB/WIFI版', '', '', '', '16GB/WIFI版', '4000', 'admin', '', '', '', '', 'templates/default/images/imgdata/ipad2.jpg', '', 85, 3, 1326770110, 'true', '', 0, '', ''),
+(4, 1, 6, 5, '0,5,', -1, -1, '', '苹果iPod touch 4', '', '', '', '白色', '1459', 'admin', '', '', '', '', 'templates/default/images/imgdata/iPod.jpg', '', 159, 4, 1326770133, 'true', '', 0, '', ''),
+(5, 1, 6, 5, '0,5,', -1, -1, '', '苹果MacBook Pro', '', '', '', 'MC725CH/A', '18400', 'admin', '', '', '', '', 'templates/default/images/imgdata/macbook.jpg', '', 87, 5, 1326770162, 'true', '', 0, '', ''),
+(6, 1, 6, 5, '0,5,', -1, -1, '', '苹果iMac', '', '', '', 'MC814CH/A', '14900', 'admin', '', '', '', '', 'templates/default/images/imgdata/iMac.jpg', '', 166, 6, 1326770178, 'true', '', 0, '', ''),
+(7, 1, 8, 0, '0,', -1, -1, '', '361度——腾讯大运会梦想传递', '', '', '', '', '', 'admin', '', '', '火炬传递将是拉开2011年深圳世界大运会全民眼帘的幕布，政府首次以官方身份举办的网络虚拟火炬传递活动。将火炬虚拟传递举办成为深圳世界大运会的一次互联网传播盛会，361度借此机遇搭载腾讯大平台，迅速使其品牌在深圳世界大运会全面曝光，从而达到361度传播品牌，提升品牌形象的目的。', '', 'templates/default/images/imgdata/361du.jpg', '', 107, 7, 1326770200, 'true', '', 0, '', ''),
+(8, 1, 8, 0, '0,', -1, -1, '', '中华牙膏——我的微笑闪亮未来', '', '', '', '', '', 'admin', '', '', '这次活动将微博与微电影进行多种结合，充分调动用户与向微电影互动，通过看电影收集微笑金币，微博好友“出演”微电影，写下“我的未来”等，将中华牙膏“我的微笑 闪亮未来”的精神精准传递给受众。', '', 'templates/default/images/imgdata/zhonghua.jpg', '', 195, 8, 1326770219, 'true', '', 0, '', ''),
+(9, 1, 8, 0, '0,', -1, -1, '', '中国电信天翼——三星I559 I mini I life', '', '', '', '', '', 'admin', '', '', '作为电信天翼的定制手机，三星Galaxy 系列手机 Galaxy Mini上市之际，电信天翼希望借助腾讯的媒体平台和互动形式，直击年轻消费群体，实现产品对目标受众的充分曝光和产品卖点的有效深化 。', '', 'templates/default/images/imgdata/I559.jpg', '', 143, 9, 1326770246, 'true', '', 0, '', ''),
+(10, 1, 8, 0, '0,', -1, -1, '', 'Moto——MT620两面派变身秀', '', '', '', '', '', 'admin', '', '', 'Tahiti是MOTO推出的第一款将“触摸屏幕”和“QWERTY Bar”相结合的智能手机 ，为快速引发青年白领关注，MOTO借腾讯大平台，打造了一场“两面派变身秀”。', '', 'templates/default/images/imgdata/moto.jpg', '', 118, 10, 1326770273, 'true', '', 0, '', ''),
+(11, 1, 12, 0, '0,', -1, -1, '', '三一重工86米世界最长臂架泵车下线', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_1.jpg', '', 64, 11, 1326770289, 'true', '', 0, '', ''),
+(12, 1, 12, 0, '0,', -1, -1, '', '三一产品获八项第一', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_2.jpg', '', 131, 12, 1326770306, 'true', '', 0, '', ''),
+(13, 1, 12, 0, '0,', -1, -1, '', '三一获评《财富》十大“最受赞赏中国公司”', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_3.jpg', '', 80, 13, 1326770336, 'true', '', 0, '', ''),
+(14, 1, 12, 0, '0,', -1, -1, '', '自主创新，志在一流，2012年三一科技节', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_4.jpg', '', 86, 14, 1326770366, 'true', '', 0, '', ''),
+(15, 1, 12, 0, '0,', -1, -1, '', '唐家璇：三一重工为国家争了光', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_5.jpg', '', 87, 15, 1326770383, 'true', '', 0, '', ''),
+(16, 1, 12, 0, '0,', -1, -1, '', '亚洲首台千吨级全地面起重机SAC12000 2.0兆风电吊装圆满成功', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_6.jpg', '', 53, 16, 1326770404, 'true', '', 0, '', ''),
+(17, 1, 14, 5, '0,5,', -1, -1, '', '历史测试', '', '', '', '', '', 'xiaobingstart', '', '', '摘要一', '详细内容呢。。。。', 'uploads/image/20130110/1357839913.png', 'uploads/image/20130110/1357834658.jpg,uploads/image/20130110/1357836585.png,uploads/image/20130110/1357837822.png,uploads/image/20130110/1357836103.png,uploads/image/20130110/1357840379.jpg,uploads/image/20130110/1357833722.jpg,uploads/image/20130110/1357838402.jpg', 137, 17, 1357831529, 'true', '', 0, '摘要2', ''),
+(18, 1, 14, 5, '0,5,', -1, -1, '', '测试帖二', '', '', '', '', '', 'xiaobingstart', 'http://www.360chaoliu.com', '', '摘要1', '详细内容', 'uploads/image/20130110/1357840948.png', '', 58, 18, 1357832030, 'true', '', 0, '摘要2：', '');
 
 -- --------------------------------------------------------
 
@@ -4048,7 +4060,7 @@ CREATE TABLE IF NOT EXISTS `li_message` (
   `posttime` int(10) unsigned NOT NULL COMMENT '更新时间',
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
 -- 转存表中的数据 `li_message`
@@ -4056,7 +4068,8 @@ CREATE TABLE IF NOT EXISTS `li_message` (
 
 INSERT INTO `li_message` (`id`, `siteid`, `nickname`, `contact`, `content`, `htop`, `rtop`, `ip`, `recont`, `retime`, `orderid`, `posttime`, `checkinfo`) VALUES
 (1, 1, '游客', 'QQ：10000', '站点很好很漂亮，超喜欢，赞！', '', 'true', '127.0.0.1', '感谢您的留言！', 1326770722, 1, 1326770722, 'true'),
-(2, 1, '游客', '不哦错 ', '使用phpmywind有些时间了，快七天了。我很喜欢它的高效和速度。已经用它做了两个站了，以后靠他吃饭了。虽然只有新闻和图片模块。很是期待商品订单模块啊，好多客户要求得功能。企业站必备啊。 使用phpmywind真的能比dedecms学的多啊。默认模板的示例都已经背下来了。恳请官方增加。或出本手册。我将成为phpmywind得忠实粉丝。最后新版啥时候发布，透漏下呗。使用phpmywind有些时间了，快七天了。我很喜欢它的高效和速度。已经用它做了两个站了，以后靠他吃饭了。虽然只有新闻和图片模块。很是期待商品订单模块啊，好多客户要求得功能。企业站必备啊。 使用phpmywind真的能比dedecms学的多啊。默认模板的示例都已经背下来了。恳请官方增加。或出本手册。我将成为phpmywind得忠实粉丝。最后新版啥时候发布，透漏下呗。', '', '', '::1', '', 0, 2, 1357487692, 'false');
+(2, 1, '游客', '不哦错 ', '使用phpmywind有些时间了，快七天了。我很喜欢它的高效和速度。已经用它做了两个站了，以后靠他吃饭了。虽然只有新闻和图片模块。很是期待商品订单模块啊，好多客户要求得功能。企业站必备啊。 使用phpmywind真的能比dedecms学的多啊。默认模板的示例都已经背下来了。恳请官方增加。或出本手册。我将成为phpmywind得忠实粉丝。最后新版啥时候发布，透漏下呗。使用phpmywind有些时间了，快七天了。我很喜欢它的高效和速度。已经用它做了两个站了，以后靠他吃饭了。虽然只有新闻和图片模块。很是期待商品订单模块啊，好多客户要求得功能。企业站必备啊。 使用phpmywind真的能比dedecms学的多啊。默认模板的示例都已经背下来了。恳请官方增加。或出本手册。我将成为phpmywind得忠实粉丝。最后新版啥时候发布，透漏下呗。', '', '', '::1', '', 0, 2, 1357487692, 'true'),
+(3, 1, '游客', '18710110306', '过来看看，看着真的不错呢', '', '', '::1', '', 0, 3, 1357834211, 'false');
 
 -- --------------------------------------------------------
 
@@ -4076,7 +4089,7 @@ CREATE TABLE IF NOT EXISTS `li_nav` (
   `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
   `checkinfo` enum('true','false') NOT NULL COMMENT '隐藏导航',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=21 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
 
 --
 -- 转存表中的数据 `li_nav`
@@ -4084,25 +4097,31 @@ CREATE TABLE IF NOT EXISTS `li_nav` (
 
 INSERT INTO `li_nav` (`id`, `siteid`, `parentid`, `parentstr`, `classname`, `linkurl`, `relinkurl`, `picurl`, `orderid`, `checkinfo`) VALUES
 (1, 1, 0, '0,', '主菜单', '#', '', '', 1, 'true'),
-(2, 1, 0, '0,', '次导航', '#', '', '', 2, 'true'),
-(3, 1, 1, '0,1,', '首　页', 'index.php', 'index.html', '', 3, 'true'),
-(4, 1, 1, '0,1,', '关于我们', 'about.php', 'about-2-1.html', '', 4, 'true'),
-(5, 1, 1, '0,1,', '新闻中心', 'news.php', 'news-4-1.html', '', 5, 'true'),
-(6, 1, 1, '0,1,', '产品展示', 'product.php', 'product-5-1.html', '', 6, 'true'),
-(7, 1, 1, '0,1,', '案例展示', 'case.php', 'case-8-1.html', '', 7, 'true'),
-(8, 1, 1, '0,1,', '人才招聘', 'join.php', 'join-1.html', '', 8, 'true'),
+(2, 1, 0, '0,', '次导航', '#', '', '', 21, 'true'),
+(3, 1, 1, '0,1,', '首　页', 'index.php', 'index.html', '', 2, 'true'),
+(4, 1, 1, '0,1,', '关于我们', 'about.php', 'about-2-1.html', '', 3, 'false'),
+(5, 1, 1, '0,1,', '新闻中心', 'news.php', 'news-4-1.html', '', 4, 'false'),
+(6, 1, 1, '0,1,', '产品展示', 'product.php', 'product-5-1.html', '', 5, 'true'),
+(7, 1, 1, '0,1,', '案例展示', 'case.php', 'case-8-1.html', '', 7, 'false'),
+(8, 1, 1, '0,1,', '人才招聘', 'join.php', 'join-1.html', '', 8, 'false'),
 (9, 1, 1, '0,1,', '客户留言', 'message.php', 'message-1.html', '', 9, 'true'),
-(10, 1, 1, '0,1,', '联系我们', 'contact.php', 'contact-9-1.html', '', 10, 'true'),
+(10, 1, 1, '0,1,', '联系我们', 'contact.php', 'contact-9-1.html', '', 10, 'false'),
 (11, 1, 2, '0,2,', '关于我们', 'about.php', 'about-2-1.html', '', 11, 'true'),
 (12, 1, 2, '0,2,', '新闻动态', 'news.php', 'news-4-1.html', '', 12, 'true'),
 (13, 1, 2, '0,2,', '产品展示', 'product.php', 'product-5-1.html', '', 13, 'true'),
 (14, 1, 2, '0,2,', '案例展示', 'case.php', 'case-8-1.html', '', 14, 'true'),
 (15, 1, 2, '0,2,', '人才招聘', 'join.php', 'join-1.html', '', 15, 'true'),
 (16, 1, 2, '0,2,', '客户留言', 'message.php', 'message-1.html', '', 16, 'true'),
-(17, 1, 2, '0,2,', '联系我们', 'contact.php', 'contact-9-1.html', '', 17, 'true'),
-(18, 1, 2, '0,2,', '软件下载', 'soft.php', 'soft-11-1.html', '', 18, 'true'),
+(17, 1, 2, '0,2,', '联系我们', 'contact.php', 'contact-9-1.html', '', 18, 'true'),
+(18, 1, 2, '0,2,', '软件下载', 'soft.php', 'soft-11-1.html', '', 17, 'true'),
 (19, 1, 6, '0,1,6,', '笔记本电脑', 'product.php?cid=6', 'product-6-1.html', '', 19, 'true'),
-(20, 1, 6, '0,1,6,', '智能手机', 'product.php?cid=7', 'product-7-1.html', '', 20, 'true');
+(20, 1, 6, '0,1,6,', '智能手机', 'product.php?cid=7', 'product-7-1.html', '', 20, 'true'),
+(21, 1, 1, '0,1,', '历史', 'product.php?cid=14', '', '', 6, 'true'),
+(22, 1, 1, '0,1,', '足底测试', 'product.php?cid=15', '', '', 22, 'true'),
+(23, 1, 1, '0,1,', '装备指导', 'product.php?cid=16', '', '', 23, 'true'),
+(24, 1, 1, '0,1,', '足部保护', 'product.php?cid=17', '', '', 24, 'true'),
+(25, 1, 1, '0,1,', '训练', 'product.php?cid=18', '', '', 25, 'true'),
+(26, 1, 1, '0,1,', '体验中心', 'product.php?cid=19', '', '', 26, 'true');
 
 -- --------------------------------------------------------
 
@@ -4219,7 +4238,24 @@ CREATE TABLE IF NOT EXISTS `li_uploads` (
   `type` enum('image','soft','media') NOT NULL COMMENT '文件类型',
   `posttime` int(10) NOT NULL COMMENT '上传日期',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+
+--
+-- 转存表中的数据 `li_uploads`
+--
+
+INSERT INTO `li_uploads` (`id`, `name`, `path`, `size`, `type`, `posttime`) VALUES
+(1, '1357833005.jpg', 'uploads/image/20130110/1357833005.jpg', 514347, 'image', 1357831618),
+(2, '1357839913.png', 'uploads/image/20130110/1357839913.png', 75060, 'image', 1357831727),
+(3, '1357840948.png', 'uploads/image/20130110/1357840948.png', 10184, 'image', 1357832092),
+(4, '1357834658.jpg', 'uploads/image/20130110/1357834658.jpg', 3459, 'image', 1357832422),
+(5, '1357836585.png', 'uploads/image/20130110/1357836585.png', 271379, 'image', 1357832439),
+(6, '1357837822.png', 'uploads/image/20130110/1357837822.png', 816, 'image', 1357832440),
+(7, '1357836103.png', 'uploads/image/20130110/1357836103.png', 1175, 'image', 1357832441),
+(8, '1357840379.jpg', 'uploads/image/20130110/1357840379.jpg', 9850, 'image', 1357832442),
+(9, '1357833722.jpg', 'uploads/image/20130110/1357833722.jpg', 10771, 'image', 1357832443),
+(10, '1357838402.jpg', 'uploads/image/20130110/1357838402.jpg', 61752, 'image', 1357832445),
+(11, '1357842316.jpg', 'uploads/image/20130110/1357842316.jpg', 395743, 'image', 1357833524);
 
 -- --------------------------------------------------------
 

@@ -21,8 +21,7 @@ $s_url = 'templates/html/default_user.html';
  * 10 包含所有身份(切换身份的虚拟值)
 */
 
-if($_SESSION['adminlevel'] == 0 or
-   $_SESSION['adminlevel'] == 10)
+if($_SESSION['adminlevel'] == 0 or $_SESSION['adminlevel'] == 10)
 {
 	if(isset($c) && $c=='preview')
 	{

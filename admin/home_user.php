@@ -13,13 +13,12 @@ $(function(){
 		$(".notewarn").fadeOut();
 	});
 	
-	$("#showad").html('<iframe src="showad.php" width="100%" height="25" scrolling="no" frameborder="0" allowtransparency="true"></iframe>');
 });
 </script>
 </head>
 <body>
 <div class="home_header">
-		<div class="refurbish"><span class="title">官方公告</span><span class="reload"><a href="javascript:location.reload();">刷新</a></span></div>
+		<div class="refurbish"><span class="title">公告</span><span class="reload"><a href="javascript:location.reload();">刷新</a></span></div>
 		<div class="home_info">
 				<div id="showad">
 				</div>
@@ -56,7 +55,6 @@ function showResult($v)
 }
 ?>
 <div class="notewarn"> <span class="close"><a href="javascript:;"></a></span>
-		<div>显示分辨率 1360*768 显示效果最佳，建议使用新版浏览器；敬请您将在使用中发现的问题或者不适提交给我们，以便改进 <a href="http://phpmywind.com/bbs/" target="_blank" class="text">点击提交反馈</a></div>
 </div>
 </div>
 </body>

@@ -220,6 +220,6 @@ if (!-e $request_filename) {
 	return 404;
 }</pre>
 </div>
-<div class="copyright">© 2012 phpMyWind.com All Rights Reserved.</div>
+<div class="copyright"></div>
 </body>
 </html>
