@@ -1,0 +1,57 @@
+.bx-next {
+	Z-INDEX: 9999; POSITION: absolute; TEXT-INDENT: -999999px; WIDTH: 30px; BOTTOM: -35px; MARGIN-BOTTOM: 51px; BACKGROUND: url(../images/gray_next.png) no-repeat 0px -25px; HEIGHT: 25px; CURSOR: pointer; RIGHT: 28px
+}
+.bx-prev {
+	Z-INDEX: 9999; POSITION: absolute; TEXT-INDENT: -999999px; WIDTH: 30px; BOTTOM: -35px; MARGIN-BOTTOM: 51px; BACKGROUND: url(../images/gray_prev.png) no-repeat 0px -25px; HEIGHT: 25px; CURSOR: pointer; RIGHT: 60px;
+}
+.bx-pager A {
+	PADDING-BOTTOM: 3px; PADDING-LEFT: 6px; PADDING-RIGHT: 8px; ZOOM: 1; BACKGROUND: url(../images/gray_pager.png) no-repeat 0px -20px; COLOR: #fff; FONT-SIZE: 12px; MARGIN-RIGHT: 5px; PADDING-TOP: 3px
+}
+.bx-auto .start {
+	PADDING-LEFT: 13px; BACKGROUND: url(../images/gray_auto.png) no-repeat 0px 2px
+}
+.bx-auto .stop {
+	PADDING-LEFT: 13px; BACKGROUND: url(../images/gray_auto.png) no-repeat 0px -14px
+}
+.bx-next:hover {
+	BACKGROUND-POSITION: 0px 0px
+}
+.bx-prev:hover {
+	BACKGROUND-POSITION: 0px 0px
+}
+.bx-pager .pager-active {
+	BACKGROUND-POSITION: 0px 0px
+}
+.bx-pager A:hover {
+	BACKGROUND-POSITION: 0px 0px
+}
+.bx-pager {
+	TEXT-ALIGN: center; COLOR: #666; FONT-SIZE: 12px; PADDING-TOP: 7px
+}
+.bx-captions {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 7px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; COLOR: #666; FONT-SIZE: 12px; PADDING-TOP: 7px
+}
+.bx-auto {
+	TEXT-ALIGN: center; PADDING-TOP: 15px
+}
+.bx-auto A {
+	COLOR: #666; FONT-SIZE: 12px
+}
+.main_slider {
+	PADDING-BOTTOM: 0px; MARGIN: -62px auto 0px; PADDING-LEFT: 0px; WIDTH: 1052px; PADDING-RIGHT: 0px; HEIGHT: 514px; PADDING-TOP: 0px
+}
+.main_slider UL LI {
+	HEIGHT: 513px
+}
+.slider-content {
+	POSITION: absolute; BOTTOM: 95px; LEFT: 0px
+}
+.slider-title {
+	PADDING-BOTTOM: 5px; TEXT-TRANSFORM: uppercase; PADDING-LEFT: 30px; PADDING-RIGHT: 15px; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND: #f36900; FLOAT: left; COLOR: #fff; FONT-SIZE: 37px; FONT-WEIGHT: bold; PADDING-TOP: 5px
+}
+.slider-text {
+	PADDING-BOTTOM: 15px; LINE-HEIGHT: 22px; MARGIN: 15px 0px 0px; PADDING-LEFT: 15px; WIDTH: 325px; PADDING-RIGHT: 15px; FONT-FAMILY: Arial, Helvetica, sans-serif; BACKGROUND: #262626; FLOAT: left; COLOR: #fff; FONT-SIZE: 17px; PADDING-TOP: 15px
+}
+.image-box-1 {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; FLOAT: left; HEIGHT: 514px; BORDER-TOP: medium none; BORDER-RIGHT: medium none
+}

@@ -1,29 +1,50 @@
-<!-- weblink-->
+<!-- Footer Part Start -->
+            <DIV class=footer-bg>
+                <DIV class=repeat-bg-3>
+                    <DIV class=main-wrapper>
+                        <DIV class="cm-fl bot-left">
+                            <DIV class="cm-fl feed-part">
+                                <DIV class=cm-fl>
+                                    <IMG title="I LOVE RSLAB" alt="" src="templates/rslab/images/rslab.jpg" width="100" height="38"></DIV>
+                                <DIV class="cm-fl bot-feed"><!-- ---------------------Social media ---------------------  -->
+                                </DIV></DIV>
+                            <DIV class=s-detail>
+                                <H2><STRONG>友情链接</STRONG></H2>
+                                <P>
+                                    <?php
+                                        $dosql->Execute("SELECT * FROM `#@__weblink` WHERE classid=1 AND checkinfo=true ORDER BY orderid,id DESC");
+                                        while($row = $dosql->GetArray())
+                                        {
 
-<div class="weblink">
-	<?php
-	$dosql->Execute("SELECT * FROM `#@__weblink` WHERE classid=1 AND checkinfo=true ORDER BY orderid,id DESC");
-	while($row = $dosql->GetArray())
-	{
-	?>
-	<a href="<?php echo $row['linkurl']; ?>" target="_blank"><?php echo $row['webname']; ?></a>
-	<?php
-	}
-	?>
-</div>
-<!-- /weblink-->
-<!-- footer-->
-<div class="footer"><?php echo $cfg_copyright.$cfg_countcode; ?><br />网站采用 <a href="http://phpmywind.com" target="_blank">PHPMyWind</a> 核心</div>
-<!-- /footer-->
-<div class="contmsg">
-	<div class="msgtxt">测试数据内容均来自互联网，若涉及侵权，请联系我们删除。</div>
-</div>
-<script type="text/javascript">
-$(function(){
-	$(".contmsg").hover(
-		function(){$(".msgtxt").fadeIn(300);},
-		function(){$(".msgtxt").fadeOut(0);}
-	);		   
-});
-</script>
-<?php echo GetQQ(); ?>
+                                            echo '<a href="'.$row['linkurl'].'" target="_blank">'.$row['webname'].'</a>&nbsp;&nbsp;';
+
+                                        }
+                                    ?>
+    
+                                </P></DIV></DIV>
+                        <DIV class=bot-right>
+                            <DIV class=cm-fl>
+
+                                <DIV class="cm-fl bot-box1">
+                                    <DIV class="cm-fl bot-img">
+                                        <IMG title=GENT alt=""  src="templates/rslab/images/img-8.jpg" width="142" height="59"></DIV>
+                                    <DIV class=cm-btn-1>
+                                        <A title="Openingsuren Gent" href="#"><SPAN>联系我们</SPAN></A> 
+                                    </DIV></DIV>
+                                <DIV class=bot-box2>
+                                    <DIV class="cm-fl bot-img">
+                                        <IMG title=DUFFEL alt="" src="templates/rslab/images/img-9.jpg" width="142" height="59"></DIV>
+                                    <DIV class=cm-btn-1>
+                                        <A title="Openingsuren Duffel" href="#"><SPAN>留言</SPAN></A> 
+                                    </DIV></DIV>
+                            </DIV>
+                        </DIV>
+                        <!--友情链接-->
+                        <DIV class="cm-fl footer-bar">
+                        </DIV>
+                        <!--友情链接-->
+                    </DIV></DIV></DIV>
+            <!-- Footer Part End -->
+        </DIV></DIV>
+    <!-- Here is google analtics code -->
+</BODY></HTML>

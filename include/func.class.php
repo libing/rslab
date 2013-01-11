@@ -478,7 +478,7 @@ function GetNav($pid=1)
 			$classname = $row['classname'];
 		}
 
-		$str .= '<li><a href="'.$gourl.'">'.$classname.'</a><ul class="nav_sub">'.GetSubNav($row['id']).'</ul></li>';
+		$str .= '<li><b><a href="'.$gourl.'">'.$classname.'</a></b></li>';
 	}
 
 	return $str;

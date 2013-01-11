@@ -1,0 +1,58 @@
+.gallery {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FLOAT: left; PADDING-TOP: 0px
+}
+.gallery UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FLOAT: left; PADDING-TOP: 0px
+}
+.gallery UL LI {
+	WIDTH: auto; DISPLAY: block; FLOAT: left; HEIGHT: 175px; COLOR: #fff
+}
+.gallery UL LI A {
+	WIDTH: auto; DISPLAY: block
+}
+.gallery UL LI A:hover {
+	
+}
+.gallery UL LI.first {
+	
+}
+.gallery UL LI UL {
+	POSITION: absolute; DISPLAY: block
+}
+.gallery UL LI:hover UL {
+	DISPLAY: block
+}
+.gallery UL LI.over UL {
+	DISPLAY: block
+}
+.gallery UL LI UL LI {
+	WIDTH: 245px; DISPLAY: inline; FLOAT: left
+}
+.gallery UL LI UL LI A {
+	POSITION: relative; DISPLAY: block; FLOAT: left
+}
+.gallery UL LI UL LI A:hover {
+	BACKGROUND-IMAGE: none; Z-INDEX: 2
+}
+.gallery UL LI UL LI A IMG {
+	
+}
+.gallery UL LI A:hover IMG {
+	Z-INDEX: 1
+}
+.gallery UL LI A:active IMG {
+	Z-INDEX: 1
+}
+.gallery UL LI A:focus IMG {
+	Z-INDEX: 1
+}
+.gallery UL LI.overview {
+	DISPLAY: block; CLEAR: both
+}
+#gallery1 UL {
+	Z-INDEX: 2
+}
+#gallery2 UL {
+	Z-INDEX: 1
+}
+.banner-part-lab-1{ margin-top:-62px;}

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2
+-- version 3.4.5
 -- http://www.phpmyadmin.net
 --
 -- 主机: localhost
--- 生成日期: 2013 年 01 月 10 日 17:18
--- 服务器版本: 5.5.25a
--- PHP 版本: 5.4.4
+-- 生成日期: 2013 年 01 月 11 日 12:39
+-- 服务器版本: 5.5.16
+-- PHP 版本: 5.3.8
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -73,8 +73,8 @@ CREATE TABLE IF NOT EXISTS `li_admin` (
 --
 
 INSERT INTO `li_admin` (`id`, `username`, `password`, `loginip`, `logintime`, `levelname`, `checkadmin`) VALUES
-(1, 'admin', 'c3284d0f94606de1fd2af172aba15bf3', '0.0.0.0', 1357834621, 0, 'true'),
-(2, 'xiaobingstart', '24f02ef828f7657f3a125df3b0e250b0', '0.0.0.0', 1357828840, 2, 'true');
+(1, 'admin', 'c3284d0f94606de1fd2af172aba15bf3', '0.0.0.0', 1357898898, 0, 'true'),
+(2, 'xiaobingstart', '24f02ef828f7657f3a125df3b0e250b0', '0.0.0.0', 1357898559, 2, 'true');
 
 -- --------------------------------------------------------
 
@@ -3742,7 +3742,7 @@ INSERT INTO `li_infoclass` (`id`, `siteid`, `parentid`, `parentstr`, `infotype`,
 (2, 1, 0, '0,', 0, '关于我们', '', '', '', '', '', 8, 'false', 'true', 0),
 (3, 1, 2, '0,2,', 0, '关于我们摘要', '', '', '', '', '', 3, 'false', '', 0),
 (4, 1, 0, '0,', 1, '新闻动态', '', '', '', '', '', 9, 'false', 'true', 0),
-(5, 1, 0, '0,', 2, '产品展示', '', '', '', '', '', 1, 'false', 'true', 2),
+(5, 1, 0, '0,', 2, '产品展示', '', '', '', '', '', 1, 'true', 'true', 2),
 (6, 1, 5, '0,5,', 2, '笔记本电脑', '', '', '', '', '', 6, 'false', '', 0),
 (7, 1, 5, '0,5,', 2, '智能手机', '', '', '', '', '', 7, 'false', '', 0),
 (8, 1, 0, '0,', 2, '成功案例', '', '', '', '', '', 11, 'false', 'true', 0),
@@ -3751,7 +3751,7 @@ INSERT INTO `li_infoclass` (`id`, `siteid`, `parentid`, `parentstr`, `infotype`,
 (11, 1, 0, '0,', 3, '软件下载', '', '', '', '', '', 21, 'false', 'true', 0),
 (12, 1, 0, '0,', 2, '首页幻灯Banner', '', '', '', '', '', 2, 'true', 'true', 0),
 (13, 1, 0, '0,', 0, '测试信息', '', '', '', '', '', 12, 'false', 'true', 0),
-(14, 1, 5, '0,5,', 2, '历史', '', 'uploads/image/20130110/1357842316.jpg', '', '', '', 15, 'true', 'true', 0),
+(14, 1, 5, '0,5,', 2, '历史', '', 'uploads/image/20130110/1357842316.jpg', '', '', '该栏目包含内容为历史栏目内容，和首页的“运动服务实验室 RSLab”的flash内容', 15, 'true', 'true', 0),
 (15, 1, 5, '0,5,', 2, '足底测试', '', '', '', '', '', 16, 'true', '', 0),
 (16, 1, 5, '0,5,', 2, '装备指导', '', '', '', '', '', 17, 'true', '', 0),
 (17, 1, 5, '0,5,', 2, '足部保护', '', '', '', '', '', 18, 'true', '', 0),
@@ -3822,7 +3822,7 @@ CREATE TABLE IF NOT EXISTS `li_infoimg` (
   `abstract_cn` text NOT NULL,
   `abstract_en` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- 转存表中的数据 `li_infoimg`
@@ -3844,9 +3844,13 @@ INSERT INTO `li_infoimg` (`id`, `siteid`, `classid`, `parentid`, `parentstr`, `m
 (13, 1, 12, 0, '0,', -1, -1, '', '三一获评《财富》十大“最受赞赏中国公司”', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_3.jpg', '', 80, 13, 1326770336, 'true', '', 0, '', ''),
 (14, 1, 12, 0, '0,', -1, -1, '', '自主创新，志在一流，2012年三一科技节', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_4.jpg', '', 86, 14, 1326770366, 'true', '', 0, '', ''),
 (15, 1, 12, 0, '0,', -1, -1, '', '唐家璇：三一重工为国家争了光', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_5.jpg', '', 87, 15, 1326770383, 'true', '', 0, '', ''),
-(16, 1, 12, 0, '0,', -1, -1, '', '亚洲首台千吨级全地面起重机SAC12000 2.0兆风电吊装圆满成功', '', '', '', '', '', 'admin', '', '', '', '', 'templates/default/images/imgdata/slideimg_6.jpg', '', 53, 16, 1326770404, 'true', '', 0, '', ''),
-(17, 1, 14, 5, '0,5,', -1, -1, '', '历史测试', '', '', '', '', '', 'xiaobingstart', '', '', '摘要一', '详细内容呢。。。。', 'uploads/image/20130110/1357839913.png', 'uploads/image/20130110/1357834658.jpg,uploads/image/20130110/1357836585.png,uploads/image/20130110/1357837822.png,uploads/image/20130110/1357836103.png,uploads/image/20130110/1357840379.jpg,uploads/image/20130110/1357833722.jpg,uploads/image/20130110/1357838402.jpg', 137, 17, 1357831529, 'true', '', 0, '摘要2', ''),
-(18, 1, 14, 5, '0,5,', -1, -1, '', '测试帖二', '', '', '', '', '', 'xiaobingstart', 'http://www.360chaoliu.com', '', '摘要1', '详细内容', 'uploads/image/20130110/1357840948.png', '', 58, 18, 1357832030, 'true', '', 0, '摘要2：', '');
+(16, 1, 12, 0, '0,', -1, -1, '', '亚洲首台千吨级全地面起重机SAC12000 2.0兆风电吊装圆满成功', '', '', '', '', '', 'admin', 'http://localhost/rslab/product.php?cid=14', '', '', '', 'templates/default/images/imgdata/slideimg_6.jpg', '', 53, 16, 1326770404, 'true', '', 0, '', ''),
+(17, 1, 14, 5, '0,5,', -1, -1, '', '历史测试', '', '', 'c', '', '', 'xiaobingstart', '', '', '', '详细内容呢。。。。', 'uploads/image/20130110/1357839913.png', 'uploads/image/20130110/1357834658.jpg,uploads/image/20130110/1357836585.png,uploads/image/20130110/1357837822.png,uploads/image/20130110/1357836103.png,uploads/image/20130110/1357840379.jpg,uploads/image/20130110/1357833722.jpg,uploads/image/20130110/1357838402.jpg', 139, 17, 1357831529, 'true', '', 0, '中文摘要', '英文摘要'),
+(18, 1, 14, 5, '0,5,', -1, -1, '', '测试帖二', '', '', '', '', '', 'xiaobingstart', 'http://www.360chaoliu.com', '', '', '详细内容', 'uploads/image/20130110/1357840948.png', '', 58, 18, 1357832030, 'true', '', 0, '中文摘要', '英文摘要'),
+(19, 1, 20, 0, '0,', -1, -1, '', '滚动图片一', '', '', '', '', '', 'xiaobingstart', '', '', '', '', 'uploads/image/20130111/1357906677.jpg', '', 93, 19, 1357899562, 'true', '', 0, '', ''),
+(20, 1, 20, 0, '0,', -1, -1, '', '滚动图片二', '', '', '', '', '', 'xiaobingstart', 'http://www.360chaoliu.com', '', '', '', 'uploads/image/20130111/1357909154.jpg', '', 71, 20, 1357899661, 'true', '', 0, '', ''),
+(21, 1, 20, 0, '0,', -1, -1, '', '滚动图片三', '', '', '', '', '', 'xiaobingstart', '', '', '', '', 'uploads/image/20130111/1357905772.png', '', 124, 21, 1357900856, 'true', '', 0, '', ''),
+(22, 1, 20, 0, '0,', -1, -1, '', '滚动图片四', '', '', '', '', '', 'xiaobingstart', '', '', '', '', 'uploads/image/20130111/1357909996.jpg', '', 112, 22, 1357900878, 'true', '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -4037,7 +4041,14 @@ CREATE TABLE IF NOT EXISTS `li_member` (
   `logintime` int(10) unsigned NOT NULL COMMENT '登陆时间',
   `loginip` varchar(20) NOT NULL COMMENT '登陆IP',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- 转存表中的数据 `li_member`
+--
+
+INSERT INTO `li_member` (`id`, `username`, `password`, `question`, `answer`, `cnname`, `enname`, `avatar`, `sex`, `birthtype`, `birth_year`, `birth_month`, `birth_day`, `astro`, `bloodtype`, `trade`, `live_prov`, `live_city`, `live_country`, `home_prov`, `home_city`, `home_country`, `cardtype`, `cardnum`, `intro`, `email`, `qqnum`, `mobile`, `telephone`, `address_prov`, `address_city`, `address_country`, `address`, `zipcode`, `enteruser`, `expval`, `integral`, `regtime`, `regip`, `logintime`, `loginip`) VALUES
+(1, 'xiaobingstart', '24f02ef828f7657f3a125df3b0e250b0', '', '', '', '', '', 0, 0, '-1', '-1', '-1', '-1', -1, '-1', '-1', '-1', '-1', '-1', '-1', '-1', -1, '', '', 'xiaobingstart@sina.com', '', '', '', '-1', '-1', '-1', '', '', '', 10, 0, 1357891921, '0.0.0.0', 1357891931, '0.0.0.0');
 
 -- --------------------------------------------------------
 
@@ -4098,30 +4109,30 @@ CREATE TABLE IF NOT EXISTS `li_nav` (
 INSERT INTO `li_nav` (`id`, `siteid`, `parentid`, `parentstr`, `classname`, `linkurl`, `relinkurl`, `picurl`, `orderid`, `checkinfo`) VALUES
 (1, 1, 0, '0,', '主菜单', '#', '', '', 1, 'true'),
 (2, 1, 0, '0,', '次导航', '#', '', '', 21, 'true'),
-(3, 1, 1, '0,1,', '首　页', 'index.php', 'index.html', '', 2, 'true'),
+(3, 1, 1, '0,1,', '首　页<br>Home', 'index.php', 'index.html', '', 2, 'true'),
 (4, 1, 1, '0,1,', '关于我们', 'about.php', 'about-2-1.html', '', 3, 'false'),
 (5, 1, 1, '0,1,', '新闻中心', 'news.php', 'news-4-1.html', '', 4, 'false'),
-(6, 1, 1, '0,1,', '产品展示', 'product.php', 'product-5-1.html', '', 5, 'true'),
+(6, 1, 1, '0,1,', '产品展示', 'product.php', 'product-5-1.html', '', 5, 'false'),
 (7, 1, 1, '0,1,', '案例展示', 'case.php', 'case-8-1.html', '', 7, 'false'),
 (8, 1, 1, '0,1,', '人才招聘', 'join.php', 'join-1.html', '', 8, 'false'),
-(9, 1, 1, '0,1,', '客户留言', 'message.php', 'message-1.html', '', 9, 'true'),
+(9, 1, 1, '0,1,', '客户留言', 'message.php', 'message-1.html', '', 9, 'false'),
 (10, 1, 1, '0,1,', '联系我们', 'contact.php', 'contact-9-1.html', '', 10, 'false'),
 (11, 1, 2, '0,2,', '关于我们', 'about.php', 'about-2-1.html', '', 11, 'true'),
 (12, 1, 2, '0,2,', '新闻动态', 'news.php', 'news-4-1.html', '', 12, 'true'),
 (13, 1, 2, '0,2,', '产品展示', 'product.php', 'product-5-1.html', '', 13, 'true'),
 (14, 1, 2, '0,2,', '案例展示', 'case.php', 'case-8-1.html', '', 14, 'true'),
 (15, 1, 2, '0,2,', '人才招聘', 'join.php', 'join-1.html', '', 15, 'true'),
-(16, 1, 2, '0,2,', '客户留言', 'message.php', 'message-1.html', '', 16, 'true'),
+(16, 1, 1, '0,1,', '专家咨询<br>contact', 'message.php', 'message-1.html', '', 26, 'true'),
 (17, 1, 2, '0,2,', '联系我们', 'contact.php', 'contact-9-1.html', '', 18, 'true'),
 (18, 1, 2, '0,2,', '软件下载', 'soft.php', 'soft-11-1.html', '', 17, 'true'),
-(19, 1, 6, '0,1,6,', '笔记本电脑', 'product.php?cid=6', 'product-6-1.html', '', 19, 'true'),
-(20, 1, 6, '0,1,6,', '智能手机', 'product.php?cid=7', 'product-7-1.html', '', 20, 'true'),
-(21, 1, 1, '0,1,', '历史', 'product.php?cid=14', '', '', 6, 'true'),
-(22, 1, 1, '0,1,', '足底测试', 'product.php?cid=15', '', '', 22, 'true'),
-(23, 1, 1, '0,1,', '装备指导', 'product.php?cid=16', '', '', 23, 'true'),
-(24, 1, 1, '0,1,', '足部保护', 'product.php?cid=17', '', '', 24, 'true'),
-(25, 1, 1, '0,1,', '训练', 'product.php?cid=18', '', '', 25, 'true'),
-(26, 1, 1, '0,1,', '体验中心', 'product.php?cid=19', '', '', 26, 'true');
+(19, 1, 6, '0,1,6,', '笔记本电脑', 'product.php?cid=6', 'product-6-1.html', '', 19, 'false'),
+(20, 1, 6, '0,1,6,', '智能手机', 'product.php?cid=7', 'product-7-1.html', '', 20, 'false'),
+(21, 1, 1, '0,1,', '历　史<br>history', 'product.php?cid=14', '', '', 6, 'true'),
+(22, 1, 1, '0,1,', '足底测试<br>Foot test', 'product.php?cid=15', '', '', 16, 'true'),
+(23, 1, 1, '0,1,', '装备指导<br>Equipment guide', 'product.php?cid=16', '', '', 22, 'true'),
+(24, 1, 1, '0,1,', '足部保护<br>Foot Protect', 'product.php?cid=17', '', '', 23, 'true'),
+(25, 1, 1, '0,1,', '训　练<br>Training', 'product.php?cid=18', '', '', 24, 'true'),
+(26, 1, 1, '0,1,', '体验中心<br>Experience', 'product.php?cid=19', '', '', 25, 'true');
 
 -- --------------------------------------------------------
 
@@ -4238,7 +4249,7 @@ CREATE TABLE IF NOT EXISTS `li_uploads` (
   `type` enum('image','soft','media') NOT NULL COMMENT '文件类型',
   `posttime` int(10) NOT NULL COMMENT '上传日期',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- 转存表中的数据 `li_uploads`
@@ -4255,7 +4266,11 @@ INSERT INTO `li_uploads` (`id`, `name`, `path`, `size`, `type`, `posttime`) VALU
 (8, '1357840379.jpg', 'uploads/image/20130110/1357840379.jpg', 9850, 'image', 1357832442),
 (9, '1357833722.jpg', 'uploads/image/20130110/1357833722.jpg', 10771, 'image', 1357832443),
 (10, '1357838402.jpg', 'uploads/image/20130110/1357838402.jpg', 61752, 'image', 1357832445),
-(11, '1357842316.jpg', 'uploads/image/20130110/1357842316.jpg', 395743, 'image', 1357833524);
+(11, '1357842316.jpg', 'uploads/image/20130110/1357842316.jpg', 395743, 'image', 1357833524),
+(12, '1357906677.jpg', 'uploads/image/20130111/1357906677.jpg', 23105, 'image', 1357899638),
+(13, '1357909154.jpg', 'uploads/image/20130111/1357909154.jpg', 23105, 'image', 1357899678),
+(14, '1357905772.png', 'uploads/image/20130111/1357905772.png', 85676, 'image', 1357900872),
+(15, '1357909996.jpg', 'uploads/image/20130111/1357909996.jpg', 28850, 'image', 1357900890);
 
 -- --------------------------------------------------------
 

@@ -1,0 +1,82 @@
+UL.MenuBarHorizontal {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: auto; PADDING-RIGHT: 0px; FONT-SIZE: 100%; CURSOR: default; PADDING-TOP: 0px
+}
+UL.MenuBarActive {
+	Z-INDEX: 1000
+}
+UL.MenuBarHorizontal LI {
+	FLOAT: left;
+	height:50px;
+	line-height:20px;
+	
+}
+UL.MenuBarHorizontal UL {
+	Z-INDEX: 1020; POSITION: absolute; PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 9.2em; PADDING-RIGHT: 0px; FONT-SIZE: 100%; CURSOR: default; PADDING-TOP: 0px; LEFT: -1000em
+}
+UL.MenuBarHorizontal UL.MenuBarSubmenuVisible {
+	LEFT: auto
+}
+UL.MenuBarHorizontal UL LI {
+	BORDER-BOTTOM: #403f3f 1px dotted; PADDING-BOTTOM: 0px; LINE-HEIGHT: 12px; PADDING-LEFT: 0px; WIDTH: 180px; PADDING-RIGHT: 0px; BACKGROUND: none transparent scroll repeat 0% 0%; PADDING-TOP: 0px;
+}
+UL.MenuBarHorizontal UL UL {
+	POSITION: absolute; MARGIN: -5% 0px 0px 95%
+}
+UL.MenuBarHorizontal UL.MenuBarSubmenuVisible UL.MenuBarSubmenuVisible {
+	TOP: 0px; LEFT: auto
+}
+UL.MenuBarHorizontal UL {
+	PADDING-BOTTOM: 5px; MARGIN-TOP: 1px; WIDTH: 180px; BACKGROUND: url(../images/dd-bg.png) no-repeat center bottom; FLOAT: left;
+}
+UL.MenuBarHorizontal A {
+	display:block;
+}
+UL.MenuBarHorizontal li a:hover {
+	 COLOR: #fff;
+	background:url(../images/navbj.jpg);
+	padding-left:5px;
+	padding-right:5px;
+}
+UL.MenuBarHorizontal A:focus {
+	BACKGROUND-COLOR: #fc7503; COLOR: #fff
+}
+UL.MenuBarHorizontal A.MenuBarItemHover {
+	BACKGROUND-COLOR: #fc7503; COLOR: #fff
+}
+UL.MenuBarHorizontal A.MenuBarItemSubmenuHover {
+	BACKGROUND-COLOR: #fc7503; COLOR: #fff
+}
+UL.MenuBarHorizontal A.MenuBarSubmenuVisible {
+	BACKGROUND-COLOR: #fc7503; COLOR: #fff
+}
+UL.MenuBarHorizontal A.MenuBarItemSubmenu {
+	
+}
+.nav UL.MenuBarHorizontal UL LI A {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; WIDTH: 170px; PADDING-RIGHT: 0px; FLOAT: left; PADDING-TOP: 0px;
+	line-height:12px;
+}
+UL.MenuBarHorizontal A.MenuBarItemSubmenuHover {
+	
+}
+UL.MenuBarHorizontal UL A.MenuBarItemSubmenuHover {
+	
+}
+UL.MenuBarHorizontal IFRAME {
+	Z-INDEX: 1010; POSITION: absolute; FILTER: alpha(opacity:0.1)
+}
+
+@media Screen, Projection    
+{
+UL.MenuBarHorizontal LI.MenuBarItemIE {
+	DISPLAY: inline; FLOAT: left
+}
+
+}
+
+.nav ul li a{ text-align:center;}
+.start-stop { top:558px;}
+.nav ul li{ padding:2px 8px; font-size:12px;}
+.d-box1 span{ padding:2px 0;}
+.banner-part-contact{ margin-top:-62px;}
+

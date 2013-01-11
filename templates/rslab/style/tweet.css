@@ -1,0 +1,66 @@
+.tweet {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #ffffff; FONT-SIZE: 120%
+}
+.query {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; COLOR: #ffffff; FONT-SIZE: 120%
+}
+.tweet .tweet_list {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px; -webkit-border-radius: .5em
+}
+.query .tweet_list {
+	PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; LIST-STYLE-IMAGE: none; PADDING-TOP: 0px; -webkit-border-radius: .5em
+}
+.tweet .tweet_list .awesome {
+	TEXT-TRANSFORM: uppercase
+}
+.tweet .tweet_list .epic {
+	TEXT-TRANSFORM: uppercase
+}
+.query .tweet_list .awesome {
+	TEXT-TRANSFORM: uppercase
+}
+.query .tweet_list .epic {
+	TEXT-TRANSFORM: uppercase
+}
+.tweet .tweet_list LI {
+	POSITION: relative; PADDING-BOTTOM: 15px; OVERFLOW-X: hidden; OVERFLOW-Y: auto; LIST-STYLE-TYPE: none; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; DISPLAY: block; BORDER-TOP: #eaeaea 1px solid; LIST-STYLE-IMAGE: none; PADDING-TOP: 15px
+}
+.query .tweet_list LI {
+	POSITION: relative; PADDING-BOTTOM: 15px; OVERFLOW-X: hidden; OVERFLOW-Y: auto; LIST-STYLE-TYPE: none; PADDING-LEFT: 15px; PADDING-RIGHT: 15px; DISPLAY: block; BORDER-TOP: #eaeaea 1px solid; LIST-STYLE-IMAGE: none; PADDING-TOP: 15px
+}
+.tweet .tweet_list LI A {
+	COLOR: #c20000; FONT-SIZE: 14px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.query .tweet_list LI A {
+	COLOR: #c20000; FONT-SIZE: 14px; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.tweet .tweet_list .tweet_even {
+	BORDER-TOP: #eaeaea 1px solid
+}
+.query .tweet_list .tweet_even {
+	BORDER-TOP: #eaeaea 1px solid
+}
+.tweet .tweet_list .tweet_avatar {
+	PADDING-RIGHT: 0.5em; FLOAT: left
+}
+.query .tweet_list .tweet_avatar {
+	PADDING-RIGHT: 0.5em; FLOAT: left
+}
+.tweet .tweet_list .tweet_avatar IMG {
+	VERTICAL-ALIGN: middle
+}
+.query .tweet_list .tweet_avatar IMG {
+	VERTICAL-ALIGN: middle
+}
+.tweet_text {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; HEIGHT: 1.3em; COLOR: #3d3d3d; FONT-SIZE: 14px; OVERFLOW: hidden; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.tweet_first {
+	BORDER-TOP: medium none
+}
+.tweet_time {
+	TEXT-ALIGN: right; WIDTH: 137px; BACKGROUND: url(../images/twitter.jpg) no-repeat 0px 8px; FLOAT: right; FONT-SIZE: 11px; PADDING-TOP: 8px
+}
+.tweet_time A {
+	COLOR: #3d3d3d !important; FONT-SIZE: 12px !important
+}

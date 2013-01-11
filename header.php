@@ -1,61 +1,59 @@
-<div class="header">
-	<h1 class="logo"><a href="javascript:;"></a></h1>
-	<div class="txt"><a href="javascript:;" onclick="AddFavorite();return false;">加入收藏</a><span>|</span>
-	<?php if($cfg_member == 'Y'){if(isset($_COOKIE['username'])){?><a href="member.php?c=default">会员中心</a>&nbsp;&nbsp;<a href="member.php?a=logout">退出</a><?php }else{ ?><a href="member.php?c=login">登录</a>&nbsp;&nbsp;&nbsp;<a href="member.php?c=reg">注册</a><?php }}else{ ?><a href="javascript:;" onclick="this.style.behavior='url(#default#homepage)';this.setHomePage(location.href);">设为首页</a><?php } ?></div>
-	<div class="tel"><?php echo $cfg_hotline; ?></div>
-	<ul class="nav">
-		<?php echo GetNav(); ?>
-	</ul>
-</div>
-<script type="text/javascript">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<HTML>
+    <HEAD>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <?php echo GetHeader(); ?>
+    <LINK rel="SHORTCUT ICON" href="images/favicon.ico">
+    <SCRIPT language=javascript type=text/javascript src="templates/rslab/js/jquery.min.js"></SCRIPT>
+    <LINK rel=stylesheet type=text/css href="templates/rslab/style/tweet.css" media=all>
+    <LINK rel=stylesheet type=text/css href="templates/rslab/style/bx_styles_home.css">
+    <SCRIPT type=text/javascript src="templates/rslab/js/jquery.bxSlider.min.js"></SCRIPT>
 
-$(function(){
-
-	/*当前页面导航高亮*/
-	var href = window.location.href.split('/')[window.location.href.split('/').length-1].substr(0,4);
-	if(href.length > 0){
-		$(function(){
-			$("ul.nav a:first[href^='"+href+"']").attr("class","on");
-			if($("ul.nav a:first[href^='"+href+"']").size() == 0){
-				$("ul.nav a:first[href^='index']").attr("class","on");
-			}
-		});
-	}else{
-		$(function(){$("ul.nav a:first[href^='index']").attr("class","on")});
-	}
-
-	/*下拉菜单*/
-	$(".nav li").hover(function(){
-		$(this).parents(".nav > li").find("a:first").addClass("on2");
-		$(this).find("ul:first").show(); //鼠标滑过查找li下面的第一个ul显示
-	},function(){
-		var navobj = $(this).find("ul:first");
-		navobj.hide();
-
-		//鼠标离开隐藏li下面的ul
-		if(navobj.attr("class") == "nav_sub")
-		{
-			$(this).find("a:first").removeClass("on2");
-		}
-	})
-
-	//给li下面ul是s的样式的前一个同辈元素添加css
-	$(".nav li ul li ul").prev().addClass("t");
-})
-
-
-//加入收藏
-function AddFavorite(){
-	if(document.all){
-		try{
-			window.external.addFavorite(window.location.href,document.title);
-		}catch(e){
-			alert("加入收藏失败，请使用Ctrl+D进行添加！");
-		}
-	}else if(window.sidebar){
-		window.sidebar.addPanel(document.title, window.location.href, "");
-	}else{
-		alert("加入收藏失败，请使用Ctrl+D进行添加！");
-	}
-}
-</script>
+    <SCRIPT type=text/javascript>
+        $(document).ready(function(){
+            $('#slider1').bxSlider({
+                auto: true,
+                autoStart: false,
+                autoControls: true,
+                resume: false,
+                startText: '',
+                stopText: '',
+                autoControlsSelector: '#my-start-stop'
+		
+	   
+            });
+        });
+    </SCRIPT>
+    <SCRIPT type=text/javascript>
+        // <![CDATA[
+        if (screen.width > 1024) {
+            document.write('<link rel="stylesheet" href="templates/rslab/style/style.css" type="text/css" media="screen,tv,projection" />');		
+        } else {
+            document.write('<link rel="stylesheet" href="templates/rslab/style/mobile.css" type="text/css" media="screen,tv,projection" />');		
+        }
+    </SCRIPT>
+    <LINK rel=stylesheet type=text/css href="templates/rslab/style/SpryMenuBarHorizontal.css">
+    <LINK rel=stylesheet type=text/css href="templates/rslab/style/gallery.css"><!------------------------------------------------------------------------------------------------------------->
+    <META name=GENERATOR content="MSHTML 8.00.6001.18702"></HEAD>
+<BODY>
+    <DIV class=start-stop>
+        <DIV id=my-start-stop></DIV></DIV><!-- Main Part Start -->
+    <DIV id=main-bg>
+        <DIV class=bot-bg><!------------------------------------------------------------------------------------------------------------->
+            <!-- Main Wrapper Start -->
+            <DIV class=second-nav-bg>
+                <DIV class=main-wrapper><!-- Top Part Start -->
+                    <DIV class=top-part>
+                        <DIV class="cm-fl top-left"><A title="Keep on Running" href="http://e.weibo.com/u/2964372814" target=_blank>新浪微博</A>
+                        </DIV>
+                        <DIV class="cm-fl cm-div menu_mob">
+                            <DIV class="cm-fl logo"><A title="Ruuners Service Lab" 
+                                                       href="http://rslab.be/nl/home"><IMG border=0 alt="" src="templates/rslab/images/logo.png" width="237"  height="73"></A></DIV>
+                            <DIV class=nav><SPAN>
+                                    <UL id=MenuBar1 class=MenuBarHorizontal>
+                                        <?php echo GetNav(); ?>
+                                    </UL>
+                                </SPAN></DIV>
+                        </DIV>
+                    </DIV><!-- Top Part End --></DIV></DIV>
+            <!-- Main Wrapper End -->
