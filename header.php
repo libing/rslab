@@ -5,25 +5,9 @@
     <?php echo GetHeader(); ?>
     <LINK rel="SHORTCUT ICON" href="images/favicon.ico">
     <SCRIPT language=javascript type=text/javascript src="templates/rslab/js/jquery.min.js"></SCRIPT>
+    <script type="text/javascript" src="templates/default/js/slideplay.js"></script>
     <LINK rel=stylesheet type=text/css href="templates/rslab/style/tweet.css" media=all>
     <LINK rel=stylesheet type=text/css href="templates/rslab/style/bx_styles_home.css">
-    <SCRIPT type=text/javascript src="templates/rslab/js/jquery.bxSlider.min.js"></SCRIPT>
-
-    <SCRIPT type=text/javascript>
-        $(document).ready(function(){
-            $('#slider1').bxSlider({
-                auto: true,
-                autoStart: false,
-                autoControls: true,
-                resume: false,
-                startText: '',
-                stopText: '',
-                autoControlsSelector: '#my-start-stop'
-		
-	   
-            });
-        });
-    </SCRIPT>
     <SCRIPT type=text/javascript>
         // <![CDATA[
         if (screen.width > 1024) {
@@ -32,6 +16,37 @@
             document.write('<link rel="stylesheet" href="templates/rslab/style/mobile.css" type="text/css" media="screen,tv,projection" />');		
         }
     </SCRIPT>
+    <script type="text/javascript">
+    function check_msg()
+    {
+            if($("#txtName").val() == "名字")
+            {
+                    alert("请填写昵称！");
+                    $("#txtName").focus();
+                    return false;
+            }
+            if($("#txtTel").val() == "联系方式")
+            {
+                    alert("请填写联系方式！");
+                    $("#txtTel").focus();
+                    return false;
+            }
+            if($("#txtEmail").val() == "邮箱")
+            {
+                    alert("请填写邮箱！");
+                    $("#txtEmail").focus();
+                    return false;
+            }
+            if($("#txtAreaVraag").val() == "留言内容")
+            {
+                    alert("请填写留言内容！");
+                    $("#txtAreaVraag").focus();
+                    return false;
+            }
+            $("#contact_form").submit();
+
+    }
+    </script>
     <LINK rel=stylesheet type=text/css href="templates/rslab/style/SpryMenuBarHorizontal.css">
     <LINK rel=stylesheet type=text/css href="templates/rslab/style/gallery.css"><!------------------------------------------------------------------------------------------------------------->
     <META name=GENERATOR content="MSHTML 8.00.6001.18702"></HEAD>

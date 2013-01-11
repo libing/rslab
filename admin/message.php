@@ -18,8 +18,9 @@
 			<td width="5%">编号</td>
 			<td width="25%" align="left">留言内容</td>
 			<td width="18%">更新时间</td>
-			<td width="12%">IP地址</td>
-			<td width="12%">用户名</td>
+			<td width="8%">用户名</td>
+                        <td width="8%">手机</td>
+                        <td width="8%">邮箱</td>
 			<td width="23%">操作</td>
 		</tr>
 		<?php
@@ -49,8 +50,9 @@
 			<td><?php echo $row['id']; ?></td>
 			<td align="left" class="titles"><?php echo ClearHtml($row['content']).$content; ?></td>
 			<td class="number"><?php echo GetDateTime($row['posttime']); ?></td>
-			<td><?php echo $row['ip']; ?></td>
 			<td><?php echo $row['nickname']; ?></td>
+                        <td><?php echo $row['contact']; ?></td>
+                        <td><?php echo $row['email']; ?></td>
 			<td class="action"><span>[<a href="message_save.php?id=<?php echo $row['id']; ?>&action=check&checkinfo=<?php echo $row['checkinfo']; ?>" title="点击进行审核与未审操作"><?php echo $checkinfo; ?></a>]</span><span>[<a href="javascript:;" onclick="ShowReWin(<?php echo $row['id'] ?>)" rel="<?php echo $row['recont']; ?>" id="recont_<?php echo $row['id'] ?>">回复</a>]</span><span>[<a href="message_update.php?id=<?php echo $row['id']; ?>">修改</a>]</span><span>[<a href="message_save.php?action=del2&id=<?php echo $row['id']; ?>" onclick="return ConfDel(0);">删除</a>]</span></td>
 		</tr>
 		<?php

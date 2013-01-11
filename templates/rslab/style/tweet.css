@@ -64,3 +64,18 @@
 .tweet_time A {
 	COLOR: #3d3d3d !important; FONT-SIZE: 12px !important
 }
+
+/*幻灯Banner*/
+#slideplay{width:1052px;height:514px;position:relative;overflow:hidden;}
+#slideplay ul{position:absolute;margin:0;padding:0;}
+#slideplay ul li{width:1052px;height:514px;position:relative;float:left;background:#000;overflow:hidden;}
+#slideplay ul li div{position:absolute;}
+#slideplay ul li img{width:1052px;height:514px;}
+#slideplay .btnBg{width:1052px;height:20px;position:absolute;left:0;bottom:0;background:#000;}
+#slideplay .btn{height:10px;padding:5px 10px;position:absolute;right:0;bottom:0;text-align:right;}
+#slideplay .btn span{width:25px;height:10px;margin-left:5px;background:#fff;display:inline-block;cursor:pointer;_display:inline;_zoom:1;_font-size:0;}
+#slideplay .btn span.on{background:#fff;}
+#slideplay .preNext{width:45px;height:100px;position:absolute;top:120px;background:url(../images/sprite.png) no-repeat 0 0;cursor:pointer;display:none;}
+#slideplay .pre{left:0;}
+#slideplay .next{right:0;background-position:right top;}
+#slideplay img{border:0;}ul,li{list-style-type:none;}

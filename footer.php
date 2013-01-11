@@ -25,17 +25,11 @@
                         <DIV class=bot-right>
                             <DIV class=cm-fl>
 
-                                <DIV class="cm-fl bot-box1">
+                                <DIV class="cm-fl bot-box2">
                                     <DIV class="cm-fl bot-img">
-                                        <IMG title=GENT alt=""  src="templates/rslab/images/img-8.jpg" width="142" height="59"></DIV>
+                                        <A title="联系我们" href="product.php?cid=21"><IMG title=联系我们 alt=""  src="templates/rslab/images/img-8.jpg" width="142" height="59"></A></DIV>
                                     <DIV class=cm-btn-1>
-                                        <A title="Openingsuren Gent" href="#"><SPAN>联系我们</SPAN></A> 
-                                    </DIV></DIV>
-                                <DIV class=bot-box2>
-                                    <DIV class="cm-fl bot-img">
-                                        <IMG title=DUFFEL alt="" src="templates/rslab/images/img-9.jpg" width="142" height="59"></DIV>
-                                    <DIV class=cm-btn-1>
-                                        <A title="Openingsuren Duffel" href="#"><SPAN>留言</SPAN></A> 
+                                        <A title="联系我们" href="product.php?cid=21"><SPAN>联系我们</SPAN></A> 
                                     </DIV></DIV>
                             </DIV>
                         </DIV>

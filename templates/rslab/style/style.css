@@ -415,13 +415,15 @@ padding:0 5px;
 }
 
 .box-1{
-	width:338px;
+	width:333px;
+        padding-top: 10px;
 }
 
 .box-2{
 	float:right;
 	margin:0px;
 	padding:0px;
+        padding-top: 10px;
 	width:324px;
 	font-family:DeliciousRoman;
 }
@@ -483,7 +485,7 @@ padding:0 5px;
 	left:0px;
 	line-height:32px;
 	vertical-align:top;
-	background-image:url(../images/img-bg.gif);
+	background-image:url(../images/img-bg2.png);
 }
 .repeat-bg-2{
 	background:url(../images/repeat-bg-2.png) center top repeat-y;
@@ -592,7 +594,7 @@ padding:0 5px;
 	float:right;
 	margin:0px;
 	padding:0px;
-	width:320px;
+	width:150px;
 }
 
 .feed-part{
@@ -903,6 +905,7 @@ padding:0 5px;
 .cm-div-1{
 	width:960px;
 	padding:20px;
+        margin-top: 10px;
 	background:#FFF;
 	margin-bottom:15px;
 }
@@ -1550,7 +1553,6 @@ h5 a:hover{
 	width:100%;
 	margin:-65px 0 0 0;
 	padding:0px;
-	background:url(../images/rslab-labo.jpg) center top no-repeat;
 	height:221px;
 }
 

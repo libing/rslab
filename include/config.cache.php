@@ -1,14 +1,14 @@
 <?php	if(!defined('IN_PHPMYWIND')) exit('Request Error!');
 
-$cfg_webname = '我的网站';
+$cfg_webname = '爱尔思康实验室';
 $cfg_weburl = 'http://localhost';
 $cfg_webpath = '/rslab';
-$cfg_author = 'PHPMyWind Team';
-$cfg_generator = 'PHPMyWind CMS';
-$cfg_keyword = '';
-$cfg_description = '';
-$cfg_copyright = 'Copyright © 2010 - 2012 phpMyWind.com All Rights Reserved';
-$cfg_hotline = '400-800-8888';
+$cfg_author = 'libing';
+$cfg_generator = 'php';
+$cfg_keyword = '爱尔思康 爱尔思康实验室 鞋垫';
+$cfg_description = '爱尔思康实验室是最正规的鞋垫实验室';
+$cfg_copyright = '';
+$cfg_hotline = '';
 $cfg_icp = '';
 $cfg_webswitch = 'Y';
 $cfg_switchshow = '对不起，网站维护，请稍后登陆。<br />网站维护期间对您造成的不便，请谅解！';

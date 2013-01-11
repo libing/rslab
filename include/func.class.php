@@ -370,7 +370,7 @@ function GetPosStr($cid,$iscont=0,$sign='&gt;')
 			if(!empty($v))
 			{
 				$r = $dosql->GetOne("SELECT `classname` FROM `#@__infoclass` where id=$v");
-				$pos_str .= $sign.$r['classname'];
+				//$pos_str .= $sign.$r['classname'];
 			}
 		}
 		
@@ -380,7 +380,7 @@ function GetPosStr($cid,$iscont=0,$sign='&gt;')
 	
 	if($iscont != 0)
 	{
-		return $pos_str.$sign.$r['classname'].$sign.'正文';
+		return $pos_str.$sign.'<a href="product.php?cid='.$cid.'">'.$r['classname'].'</a>'.$sign.'正文';
 	}
 	else
 	{

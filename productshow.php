@@ -1,235 +1,112 @@
-<?php
-require_once(dirname(__FILE__).'/include/config.inc.php');
-
+<?php 
+include_once (dirname(__FILE__).'/include/config.inc.php');
+include_once ('header.php'); 
 //初始化参数检测正确性
 if(empty($cid)) $cid = 5;
 $cid = intval($cid);
 $id  = intval($id);
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<?php echo GetHeader($cid,$id); ?>
-<link href="templates/default/style/webstyle.css" type="text/css" rel="stylesheet" />
-<link href="templates/default/style/lightbox.css" type="text/css" rel="stylesheet" />
-<!--[if IE 6]><link href="templates/default/style/lightbox.ie6.css" rel="stylesheet" type="text/css"/><![endif]-->
-<script type="text/javascript" src="templates/default/js/jquery.min.js"></script>
-<script type="text/javascript" src="templates/default/js/loadimage.js"></script>
-<script type="text/javascript" src="templates/default/js/slidespro.js"></script>
-<script type="text/javascript" src="templates/default/js/lightbox.js"></script>
-<script type="text/javascript" src="templates/default/js/comment.js"></script>
-<script type="text/javascript">
-$(function(){
-	jQuery('.lightbox').lightbox();
-    $(".showimg img").LoadImage({width:690,height:600});
-	$(".picarr .picture img").LoadImage({width:530,height:350});
-	$(".picarr .preview img").LoadImage({width:58,height:45});
-	$(".small").click(function(){$("#textarea").css('font-size','12px');});
-	$(".big").click(function(){$("#textarea").css('font-size','14px');});
-});
-</script>
-</head>
-<body>
-<!-- header-->
-<?php require_once('header.php'); ?>
-<!-- /header-->
-<!-- banner-->
-<div class="subBanner"> <img src="templates/default/images/banner-ir.png" /> </div>
-<!-- /banner-->
-<!-- notice-->
-<div class="notice"><strong>网站公告：</strong> <?php echo Info(1); ?> </div>
-<!-- /notice-->
-<!-- mainbody-->
-<div class="subBody">
-	<div class="OneOfTwo">
-		<?php require_once('lefter.php'); ?>
-	</div>
-	<div class="TwoOfTwo">
-		<div class="subTitle"> <a href="javascript:history.go(-1);" class="goback">&gt;&gt; 返回</a> <span>您当前所在位置：<?php echo GetPosStr($cid,1); ?></span>
-			<div class="cl"></div>
-		</div>
-		<!-- 详细区域开始 -->
-		<div class="listConts">
-			<?php
 
-			//检测文档正确性
-			$r = $dosql->GetOne("SELECT * FROM `#@__infoimg` WHERE id=$id");
-			if(@$r)
-			{
-			//增加一次点击量
-			$dosql->ExecNoneQuery("UPDATE `#@__infoimg` SET hits=hits+1 WHERE id=$id");
-			$row = $dosql->GetOne("SELECT * FROM `#@__infoimg` WHERE id=$id");
-			?>
-			<!-- 标题区域开始 -->
-			<h1 class="title"><?php echo $row['title']; ?></h1>
-			<div class="info"><small>更新时间：</small><?php echo GetDateTime($row['posttime']); ?><small>点击次数：</small><?php echo $row['hits']; ?>次<small>字号：</small><span class="small" title="切换到小字体">T</span>|<span class="big" title="切换到大字体">T</span></div>
-			<!-- 标题区域结束 -->
-			<!-- 摘要区域开始 -->
-			<?php
-			//获取描述
-			if(!empty($row['description'])) echo '<div class="desc">'.$row['description'].'</div>';
-			?>
-			<!-- 摘要区域结束 -->
-			<!-- 组图区域开始-->
-			<?php
-			//判断显示缩略图或组图
-			if(empty($row['picarr']))
-			{
-			?>
-			<div class="showimg"><a href="<?php echo $row['picurl']; ?>" class="lightbox"><img src="<?php echo $row['picurl']; ?>"></a></div>
-			<?php
-			}
-			else
-			{
-				$picarr = explode(',',$row['picarr']);
-			?>
-			<div class="picarr">
-				<div class="picture">
-					<?php
-					foreach($picarr as $k)
-					{
-					?>
-					<a href="<?php echo $k; ?>" class="lightbox"><img src="<?php echo $k; ?>" /></a>
-					<?php
-					}
-					?>
-				</div>
-				<ul class="preview">
-					<?php
-					foreach($picarr as $k)
-					{
-					?>
-					<li><a href="javascript:void(0);"><img src="<?php echo $k; ?>" /></a></li>
-					<?php
-					}
-					?>
-					<div class="cl"></div>
-				</ul>
-				<div class="cl"></div>
-			</div>
-			<?php
-			}
-			?>
-			<!-- 组图区域结束 -->
-			<!-- 内容区域开始 -->
-			<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="showtext">
-				<tr>
-					<th width="100%" height="40" align="left">相关介绍</th>
-				</tr>
-				<tr>
-					<td id="textarea">
-							<?php if($row['content'] != ''){echo GetContPage($row['content']);}else{echo '网站资料更新中...';} ?>
-						</td>
-				</tr>
-			</table>
-			<!-- 内容区域结束 -->
-			<!-- 相关文章开始 -->
-			<div class="preNext">
-				<div class="line"><strong></strong></div>
-				<ul class="text">
-				<?php
+$row = $dosql->GetOne("SELECT `picurl` FROM `#@__infoclass` WHERE id=$cid");
+if(!empty($row['picurl'])){
+    $top_img = $row['picurl'];
+}  else {
+    $top_img = 'templates/rslab/images/rslab-labo.jpg';
+}
+
+//留言内容处理
+if(isset($action) and $action=='add')
+{
+	if(empty($txtName))
+	{
+		ShowMsg('昵称不能为空！',"productshow.php?cid=$cid&id=$id");
+		exit();
+	}
 	
-				//获取上一篇信息
-				$r = $dosql->GetOne("SELECT * FROM `#@__infoimg` WHERE classid=".$row['classid']." AND id<".$row['id']." AND delstate='' AND checkinfo=true ORDER BY orderid DESC");
-				if($r < 1)
-				{
-					echo '<li>上一篇：已经没有了</li>';
-				}
-				else
-				{
-					if($cfg_isreurl!='Y')
-					{
-						$gourl = 'productshow.php?cid='.$r['classid'].'&id='.$r['id'];
-					}
-					else
-					{
-						$gourl = 'productshow-'.$r['classid'].'-'.$r['id'].'-1.html';
-					}
+	if(empty($txtAreaVraag))
+	{
+		ShowMsg('内容不能为空！',"productshow.php?cid=$cid&id=$id");
+		exit();
+	}
 
-					echo '<li>上一篇：<a href="'.$gourl.'">'.$r['title'].'</a></li>';
-				}
-				
-				//获取下一篇信息
-				$r = $dosql->GetOne("SELECT * FROM `#@__infoimg` WHERE classid=".$row['classid']." AND id>".$row['id']." AND delstate='' AND checkinfo=true ORDER BY orderid ASC");
-				if($r < 1)
-				{
-					echo '<li>下一篇：已经没有了</li>';
-				}
-				else
-				{
-					if($cfg_isreurl!='Y')
-					{
-						$gourl = 'productshow.php?cid='.$r['classid'].'&id='.$r['id'];
-					}
-					else
-					{
-						$gourl = 'productshow-'.$r['classid'].'-'.$r['id'].'-1.html';
-					}
 
-					echo '<li>下一篇：<a href="'.$gourl.'">'.$r['title'].'</a></li>';
-				}
-				?>
-				</ul>
-				<ul class="actBox">
-					<li id="act-pus"><a href="javascript:;" onclick="<?php $c_uname = isset($_COOKIE['username']) ? AuthCode($_COOKIE['username']) : '';if($c_uname != ''){echo 'AddUserFavorite()';}else{echo 'AddFavorite();';} ?>">收藏</a></li>
-					<li id="act-pnt"><a href="javascript:;" onclick="window.print();">打印</a></li>
-				</ul>
-			</div>
-			<!-- 相关文章结束 -->
-			<?php
-			if($cfg_comment == 'Y')
-			{
-			?>
-			<!-- 评论区域开始 -->
-			<ul class="commlist">
-				<?php
-				$dosql->Execute("SELECT * FROM `#@__usercomment` WHERE molds=2 AND aid=$id AND isshow=1 ORDER BY id DESC");
-				while($row = $dosql->GetArray())
-				{
-					echo '<li><span class="uname">'.$row['uname'].'</span><p>'.$row['body'].'</p><span class="time">'.GetDateTime($row['time']).'</span></li>';
-				}
-				?>
-			</ul>
-			<div class="commnum">
-				<span>
-					<i>
-					<?php
-					$r = $dosql->GetOne("SELECT COUNT(id) as n FROM `#@__usercomment` WHERE molds=2 AND aid=$id AND isshow=1 ORDER BY id DESC");
-					echo $r['n'];
-					?>
-					</i>
-					条评论
-				</span>
-			</div>
-			<div class="commnet">
-				<form name="form" id="form" action="" method="post">
-					<div class="msg">
-						<textarea name="comment" id="comment">说点什么吧...</textarea>
-					</div>
-					<div class="toolbar">
-						<div class="options">
-							不想登录？直接点击发布即可作为游客留言。
-						</div>
-						<button class="button" type="button">发 布</button>
-					</div>
-					<input type="hidden" name="aid" id="aid" value="<?php echo $id; ?>" />
-					<input type="hidden" name="molds" id="molds" value="2" />
-				</form>
-			</div>
-			<!-- 评论区域结束 -->
-			<?php
-			}
-			}
-			?>
-		</div>
-		<!-- 详细区域结束 -->
-	</div>
-	<div class="cl"></div>
-</div>
-<!-- /mainbody-->
-<!-- footer-->
+	$r = $dosql->GetOne("SELECT Max(orderid) AS orderid FROM `#@__message`");
+	$orderid  = (empty($r['orderid']) ? 1 : ($r['orderid'] + 1));
+	$nickname = htmlspecialchars($txtName);
+	$contact  = htmlspecialchars($txtTel);
+        $email  = htmlspecialchars($txtEmail);
+	$content  = htmlspecialchars($txtAreaVraag);
+	$posttime = GetMkTime(time());
+	$ip       = gethostbyname($_SERVER['REMOTE_ADDR']);
+
+
+	$sql = "INSERT INTO `#@__message` (siteid, nickname, contact, email,content, orderid, posttime, htop, rtop, checkinfo, ip) VALUES (1, '$nickname', '$contact','$email', '$content', '$orderid', '$posttime', '', '', 'false', '$ip')";
+	if($dosql->ExecNoneQuery($sql))
+	{
+		ShowMsg('留言成功，感谢您的支持！',"productshow.php?cid=$cid&id=$id");
+		exit();
+	}
+}
+
+?>
+<!-- Banner Wrapper Start -->
+<DIV class=banner-part-lab-1  style="background:url(<?php echo $top_img;?>) center top no-repeat;"></DIV><!-- Banner Wrapper End --><!-- Middle Wrapper Start -->
+<DIV class=repeat-bg-1>
+    <DIV style="POSITION: relative" class=main-wrapper>
+        
+        <DIV class="cm-fl quotes">
+            <DIV class="cm-fl q-no"></DIV>
+            <DIV class="cm-fl q-text"><span>您当前所在位置：<?php echo GetPosStr($cid,1); ?></span></DIV>
+        </DIV>
+
+        <DIV class="cm-fl cm-div-1">
+            <?php
+
+
+            $row = $dosql->GetOne("SELECT * FROM `#@__infoimg` WHERE id=$id");
+            
+            echo "<H1 style='text-align:center;'><b><SPAN>{$row['title']}</SPAN></b></H1>";
+            if($row['content'] != ''){
+                echo "<P>".GetContPage($row['content'])."</P>";
+            }else{
+                echo '<P>网站资料更新中...</P>';
+            }
+            ?>
+
+        </DIV>
+        <DIV class=clear-both></DIV>
+        
+        <?php
+        if($cid==21){
+        ?>
+        <div class="clear-both"></div>
+        <div class="cm-fl left-part-4">
+            <h3>您的咨询</h3><br>
+            <div>
+                <table border="0" cellspacing="0" cellpadding="0" align="left"></table>
+                <div class="clear-both"></div>
+            </div>
+            <form method="post" id="contact_form" name="contact_form" onsubmit="return check_msg();">
+            <div style="WIDTH: 325px" class="cm-fl form-bg">
+                
+                    <input onblur="if(this.value=='') this.value='名字'" id="txtName" onfocus="if(this.value =='名字') this.value=''" value="名字" type="text" name="txtName" id="txtName"> 
+                    <input onblur="if(this.value=='') this.value='联系方式'" id="txtTel" onfocus="if(this.value == '联系方式') this.value=''" value="联系方式" type="text" name="txtTel" id="txtTel"> 
+                    <input onblur="if(this.value=='') this.value='邮箱'" id="txtEmail" onfocus="if(this.value == '邮箱') this.value=''" value="邮箱" type="text" name="txtEmail" id="txtEmail"> 
+                
+            </div>
+            <div class="cm-fl form-bg">
+                <textarea rows="5" onblur="if(this.value=='') this.value='留言内容'" onfocus="if(this.value =='留言内容' ) this.value=''" name="txtAreaVraag" id="txtAreaVraag">留言内容</textarea> 
+                <div class="cm-fr">
+                    <div class="cm-btn-6"><input type="hidden" name="action" id="action" value="add" /><span><input value="留言" type="submit" name="submit"></span> 
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+        <?php
+        }
+        ?>
+    </DIV>
+    
+</DIV>
+<!-- Middle Wrapper End -->
 <?php require_once('footer.php'); ?>
-<!-- /footer-->
-</body>
-</html>

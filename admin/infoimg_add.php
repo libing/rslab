@@ -55,11 +55,12 @@
 			<td height="35" align="right">属　性：</td>
 			<td class="attrArea">
 			<?php
-			$dosql->Execute("SELECT * FROM `#@__infoflag` ORDER BY orderid ASC");
-			while($row = $dosql->GetArray())
-			{
-				echo '<span><input type="checkbox" name="flag[]" id="flag[]" value="'.$row['flag'].'" />'.$row['flagname'].'['.$row['flag'].']</span>';
-			}
+//			$dosql->Execute("SELECT * FROM `#@__infoflag` ORDER BY orderid ASC");
+//			while($row = $dosql->GetArray())
+//			{
+//				echo '<span><input type="checkbox" name="flag[]" id="flag[]" value="'.$row['flag'].'" />'.$row['flagname'].'['.$row['flag'].']</span>';
+//			}
+                        echo '<span><input type="checkbox" value="c" id="flag[]" name="flag[]">推荐[c]</span>';
 			?></td>
 		</tr>
 		<tr class="nb">
@@ -68,11 +69,11 @@
 		<?php
 		GetDiyField('2');
 		?>
-		<tr>
+		<tr style="display: none">
 			<td height="35" align="right">型　号：</td>
 			<td><input type="text" name="size" id="size" class="class_input" value="" /></td>
 		</tr>
-		<tr>
+		<tr style="display: none">
 			<td height="35" align="right">价　格：</td>
 			<td><input type="text" name="price" id="price" class="class_input" value="" /></td>
 		</tr>
@@ -96,7 +97,7 @@
 			<td><input type="text" name="keywords" class="class_input" id="keywords" />
 				<span class="cnote">多关键词之间用空格或者“,”隔开</span></td>
 		</tr>
-		<tr>
+		<tr style="display: none">
 			<td height="104" align="right">摘　要：</td>
 			<td><textarea name="description" class="class_areadesc" id="description"></textarea>
 				<div class="maxtxtlen"> 最多能输入 <strong>255</strong> 个字符 </div></td>
@@ -127,7 +128,7 @@
 					<input type="text" name="autopagesize" id="autopagesize" value="5" size="6" class="input_gray_short" />
 					KB</div></td>
 		</tr>
-		<tr class="nb">
+		<tr class="nb" style="display: none">
 			<td height="124" align="right">组　图：</td>
 			<td><fieldset class="picarr">
 					<legend>列表</legend>
