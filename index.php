@@ -80,8 +80,9 @@ while($row = $dosql->GetArray()){
     </DIV>
 </DIV>
 <DIV class=border-1></DIV>
+
 <!--图片滚动-->
-<div id=demo style="overflow:hidden;width:1050px; margin:auto; background:url(templates/rslab/images/repeat-bg-2.png) center">
+<div id=demo style="overflow:hidden;width:1053px; margin:auto; background:url(templates/rslab/images/repeat-bg-2.png) center">
     <table  align=center cellpadding=0 cellspacing=0 cellspace=0  style="border:0px; width:1050px;">
         <tr><td valign=top  id=marquePic1>
                 <table width='100%'  cellpadding=3 cellspacing=3  border="0">
@@ -98,24 +99,28 @@ while($row = $dosql->GetArray()){
             </td><td id=marquePic2 valign=top></td></tr>
     </table></div>
 <script type="text/javascript"> 
-    var speed=50 
-    marquePic2.innerHTML=marquePic1.innerHTML 
-    function Marquee(){ 
+    var speed=30;
+    marquePic2.innerHTML=marquePic1.innerHTML;
+    function Marquee(){
         if(demo.scrollLeft>=marquePic1.scrollWidth){ 
-            demo.scrollLeft=0 
+            demo.scrollLeft=0;
         }else{ 
-            demo.scrollLeft++ 
+            demo.scrollLeft++;
         } 
     } 
-    var MyMar=setInterval(Marquee,speed) 
-    demo.onmouseover=function() {clearInterval(MyMar)} 
-    demo.onmouseout=function() {MyMar=setInterval(Marquee,speed)} 
+    var MyMar=setInterval(Marquee,speed);
+    demo.onmouseover=function(){
+        clearInterval(MyMar);
+    } 
+    demo.onmouseout=function(){
+        MyMar=setInterval(Marquee,speed);
+    } 
 </script>
-<!--图片滚动-->
+
 <DIV class=repeat-bg-2>
     <DIV class=main-wrapper>
         <DIV class="cm-fl box-1">
-            <H4>装备测评 Gear evulation</H4>
+            <H4  class=shop><A title=SHOP href="product.php?cid=18">装备测评 Gear evulation</a></H4>
             <DIV class="cm-fl d-box1 img-4 left-attribut" style="height:330px;">
                 <embed src="<?php echo $return_top['16']['flash_url']; ?>" quality="high" width="310" height="330" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>
             </DIV>

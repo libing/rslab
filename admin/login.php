@@ -233,8 +233,8 @@ $(function(){
 			<input type="hidden" name="dopost" value="login" />
 		</form>
 	</div>
-	<div class="login_area_text">感谢您使用 <span>phpMyWind</span> 产品</div>
+	
 </div>
-<div class="login_copyright">© 2012 phpMyWind.com</div>
+
 </body>
 </html>

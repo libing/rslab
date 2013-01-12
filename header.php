@@ -5,7 +5,7 @@
     <?php echo GetHeader(); ?>
     <LINK rel="SHORTCUT ICON" href="images/favicon.ico">
     <SCRIPT language=javascript type=text/javascript src="templates/rslab/js/jquery.min.js"></SCRIPT>
-    <script type="text/javascript" src="templates/default/js/slideplay.js"></script>
+    <script type="text/javascript" src="templates/rslab/js/slideplay.js"></script>
     <LINK rel=stylesheet type=text/css href="templates/rslab/style/tweet.css" media=all>
     <LINK rel=stylesheet type=text/css href="templates/rslab/style/bx_styles_home.css">
     <SCRIPT type=text/javascript>
@@ -59,11 +59,11 @@
             <DIV class=second-nav-bg>
                 <DIV class=main-wrapper><!-- Top Part Start -->
                     <DIV class=top-part>
-                        <DIV class="cm-fl top-left"><A title="Keep on Running" href="http://e.weibo.com/u/2964372814" target=_blank>新浪微博</A>
+                        <DIV class="cm-fl top-left"><A title="爱尔思康实验室微博" href="http://e.weibo.com/u/2964372814" target=_blank>新浪微博</A>
                         </DIV>
                         <DIV class="cm-fl cm-div menu_mob">
-                            <DIV class="cm-fl logo"><A title="Ruuners Service Lab" 
-                                                       href="http://rslab.be/nl/home"><IMG border=0 alt="" src="templates/rslab/images/logo.png" width="237"  height="73"></A></DIV>
+                            <DIV class="cm-fl logo">
+                                <A title="爱尔思康实验室" href="#"><IMG border=0 alt="" src="templates/rslab/images/logo.png" width="237"  height="73"></A></DIV>
                             <DIV class=nav><SPAN>
                                     <UL id=MenuBar1 class=MenuBarHorizontal>
                                         <?php echo GetNav(); ?>
