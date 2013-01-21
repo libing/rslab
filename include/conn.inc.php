@@ -11,13 +11,13 @@ update: 2012-2-14 17:19:08
 $db_host = 'localhost';
 
 //数据库用户名
-$db_user = 'root';
+$db_user = 'rslab';
 
 //数据库密码
-$db_pwd = '';
+$db_pwd = 'T7lW6mkx';
 
 //数据库名
-$db_name = 'rslab';
+$db_name = 'sqlrslab';
 
 //数据表前缀
 $db_tablepre = 'li_';

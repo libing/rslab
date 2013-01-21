@@ -1,8 +1,8 @@
 <?php	if(!defined('IN_PHPMYWIND')) exit('Request Error!');
 
 $cfg_webname = '爱尔思康实验室';
-$cfg_weburl = 'http://localhost';
-$cfg_webpath = '/rslab';
+$cfg_weburl = 'http://www.rslab.cn/';
+$cfg_webpath = '';
 $cfg_author = 'libing';
 $cfg_generator = 'php';
 $cfg_keyword = '爱尔思康 爱尔思康实验室 鞋垫';

@@ -40,14 +40,14 @@ while($row = $dosql->GetArray()){
     <DIV style="Z-INDEX: 9999; POSITION: relative" class=main-wrapper>
         <DIV class="cm-fl cm-div">
             <DIV class="cm-fl box-1">
-                <H4 class=lab><A href="product.php?cid=14">运动服务实验室 RSLab</A></H4>
+                <H4 class=lab><A title="运动服务实验室 RSLab" href="product.php?cid=14">运动服务实验室 RSLab</A></H4>
                 <DIV class="cm-fl d-box1 img-1" style="height:330px;">
                     <embed src="<?php echo $return_top['14']['flash_url']; ?>" quality="high" width="310" height="330" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>
                 </DIV>
             </DIV>
             
             <DIV class="cm-fl box-1">
-                <H4 class=shop><A title=SHOP href="product.php?cid=19">冠军体验服务 Champion Service</A></H4>
+                <H4 class=shop><A title="冠军体验服务 Champion Service" href="product.php?cid=19">冠军体验服务 Champion Service</A></H4>
                 <DIV class="cm-fl d-box1 img-1">
                     <A href="<?php echo $return_top['19']['gourl']; ?>">
                         <IMG title=<?php echo $return_top['19']['title']; ?> border=0 alt="" width="313" height="183" src="<?php echo $return_top['19']['picurl']; ?>">
@@ -62,7 +62,7 @@ while($row = $dosql->GetArray()){
             </DIV>
             
             <DIV class="cm-fl box-2">
-                <H4 class=pro><A title="RSLAB PRO" href="product.php?cid=21">专家咨询 Expert Adviser</A></H4>
+                <H4 class=pro><A title="专家咨询 Expert Adviser" href="product.php?cid=21">专家咨询 Expert Adviser</A></H4>
                 <DIV class="cm-fl d-box1 img-1">
                     <A href="<?php echo $return_top['21']['gourl']; ?>">
                         <IMG title=<?php echo $return_top['21']['title']; ?> border=0 alt="" width="313" height="183" src="<?php echo $return_top['21']['picurl']; ?>">
@@ -80,7 +80,6 @@ while($row = $dosql->GetArray()){
     </DIV>
 </DIV>
 <DIV class=border-1></DIV>
-
 <!--图片滚动-->
 <div id=demo style="overflow:hidden;width:1053px; margin:auto; background:url(templates/rslab/images/repeat-bg-2.png) center">
     <table  align=center cellpadding=0 cellspacing=0 cellspace=0  style="border:0px; width:1050px;">
@@ -110,23 +109,23 @@ while($row = $dosql->GetArray()){
     } 
     var MyMar=setInterval(Marquee,speed);
     demo.onmouseover=function(){
-        clearInterval(MyMar);
-    } 
+		clearInterval(MyMar);
+	} 
     demo.onmouseout=function(){
-        MyMar=setInterval(Marquee,speed);
-    } 
+		MyMar=setInterval(Marquee,speed);
+	} 
 </script>
-
+<!--图片滚动-->
 <DIV class=repeat-bg-2>
     <DIV class=main-wrapper>
         <DIV class="cm-fl box-1">
-            <H4  class=shop><A title=SHOP href="product.php?cid=18">装备测评 Gear evulation</a></H4>
+            <H4 class=lab><A title="装备测评 Gear evulation" href="product.php?cid=18">装备测评 Gear evulation</a></H4>
             <DIV class="cm-fl d-box1 img-4 left-attribut" style="height:330px;">
-                <embed src="<?php echo $return_top['16']['flash_url']; ?>" quality="high" width="310" height="330" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>
+                <embed src="<?php echo $return_top['18']['flash_url']; ?>" quality="high" width="310" height="330" align="middle" allowScriptAccess="always" allowFullScreen="true" mode="transparent" type="application/x-shockwave-flash"></embed>
             </DIV>
         </DIV>
         <DIV class="cm-fl box-1">
-            <H4 class=shop><A title=SHOP href="product.php?cid=16">装备指导 Guidance</A></H4>
+            <H4 class=shop><A title="装备指导 Guidance" href="product.php?cid=16">装备指导 Guidance</A></H4>
             <DIV class="cm-fl d-box1 img-1">
                 <A href="<?php echo $return_top['16']['gourl']; ?>">
                     <IMG title=<?php echo $return_top['16']['title']; ?> border=0 alt="" width="313" height="183" src="<?php echo $return_top['16']['picurl']; ?>">
@@ -141,7 +140,7 @@ while($row = $dosql->GetArray()){
         </DIV>
         
         <DIV class="cm-fl box-2">
-            <H4 class=pro><A title="RSLAB PRO" href="product.php?cid=17">足部保护 Protect</A></H4>
+            <H4 class=pro><A title="足部保护 Protect" href="product.php?cid=17">足部保护 Protect</A></H4>
             <DIV class="cm-fl d-box1 img-1">
                 <A href="<?php echo $return_top['17']['gourl']; ?>">
                     <IMG title=<?php echo $return_top['17']['title']; ?> border=0 alt="" width="313" height="183" src="<?php echo $return_top['17']['picurl']; ?>">

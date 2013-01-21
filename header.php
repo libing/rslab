@@ -59,11 +59,11 @@
             <DIV class=second-nav-bg>
                 <DIV class=main-wrapper><!-- Top Part Start -->
                     <DIV class=top-part>
-                        <DIV class="cm-fl top-left"><A title="爱尔思康实验室微博" href="http://e.weibo.com/u/2964372814" target=_blank>新浪微博</A>
+                        <DIV class="cm-fl top-left"><A title="Keep on Running" href="http://e.weibo.com/u/2964372814" target=_blank>新浪微博</A>
                         </DIV>
                         <DIV class="cm-fl cm-div menu_mob">
                             <DIV class="cm-fl logo">
-                                <A title="爱尔思康实验室" href="#"><IMG border=0 alt="" src="templates/rslab/images/logo.png" width="237"  height="73"></A></DIV>
+							<A title="爱尔思康实验室" href="#"><IMG border=0 alt="" src="templates/rslab/images/logo.png" width="237"  height="73"></A></DIV>
                             <DIV class=nav><SPAN>
                                     <UL id=MenuBar1 class=MenuBarHorizontal>
                                         <?php echo GetNav(); ?>
